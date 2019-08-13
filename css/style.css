@@ -191,6 +191,10 @@ div.headerbox {
       width: 100%;
     }
 
+    h1.header {
+      left: 50% !important;
+    }
+
     .toplogo {
       position: absolute;
       top: -20.5rem;
@@ -364,8 +368,12 @@ div.headerbox {
 
     h1.portfolio {
       font-size: 5rem;
-      left: 65%;
+      left: 50%;
       transform: translate(-50%, -50%);
+    }
+
+    h1.header {
+      left: 65%;
     }
 
     div.portfoliobox {
