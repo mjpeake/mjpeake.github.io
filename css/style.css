@@ -276,6 +276,10 @@ div.headerbox {
     h3.link {
       font-size: 0.9rem;
     }
+
+    .playPCButton {
+      display: none;
+    }
   }
 
   /* BOOTSTRAP SM */
@@ -350,6 +354,10 @@ div.headerbox {
     h3.link {
       font-size: 0.8rem;
     }
+
+    .playPCButton {
+      display: none;
+    }
   }
 
   /* BOOTSTRAP MD */
@@ -412,6 +420,10 @@ div.headerbox {
     h3.link {
       font-size: 1rem;
     }
+
+    .playPCButton {
+      display: none;
+    }
   }
 
   /* BOOTSTRAP LG */
@@ -438,7 +450,13 @@ div.headerbox {
     }
   }
 
+  .playPCButton {
+    display: none;
+  }
+
   /* BOOTSTRAP XL */
   @media (min-width: 1200px) {
-    ;
+    .playPCButton {
+      display: block;
+    }
   }
