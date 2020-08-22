@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>Matthew Peake</title>
-    <link rel="shortcut icon" type="image/png" href="images/icon.png">
+    <link rel="shortcut icon" type="/image/png" href="assets/images/logo.png">
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -11,90 +11,47 @@
     <meta name="description" content="Hub for my CV and personal/academic projects.">
     <meta name="robots" content="index, follow">
     <meta name="keywords" content="homepage, cv, project, computer science, java, html, php, javascript"/>
-    <!-- End of Meta Tags -->
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
-    <link rel="stylesheet" type="text/css"  href='css/style.css' />
-    <!-- End of Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
-    <!-- End of JS -->
+    <!-- Project Showcase -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="https://ghcdn.rawgit.org/mattpeake21/ColourfulBoids/master/boid.js"></script>
+    <script src="https://ghcdn.rawgit.org/mattpeake21/ColourfulBoids/master/canvas.js"></script>
+    <script> new p5(colourfulBoids, "projectShowcase");</script>
   </head>
 
-  <body class="container">
-    <!-- Top Menu -->
-    <div style="position: relative;">
-      <a href="./"><img class="toplogo shadow" src="images/logo.jpg" alt="Logo"></a>
-      <!-- Navbar -->
-      <nav class="navbar navbartop navbar-expand navbar-light bg-light shadow">
-        <div class="collapse navbar-collapse justify-content-center">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="./">Home</a>
-            <a class="nav-item nav-link" href="portfolio">Portfolio</a>
-            <a class="nav-item nav-link" href="cv"><span class="short-cv">CV</span><span class="long-cv">Curriculum Vitae</span></a>
-          </div>
-        </div>
-      </nav>
-      <!-- End of Navbar -->
+  <body class="container-fluid d-flex flex-column vh-100 pt-4 px-5 overflow-hidden">
+    <!-- Navigation Bar -->
+    <div class="row flex-shrink-0">
+      <a href="./"><div class="logo"><img src="assets/images/logo.png" alt="Logo" width="100%" height="100%"></div></a>
+      <a href='about' class='ml-auto' role='button'><h1 class='navBtn'>About Me</h1></a>
+      <a href='projects' class='ml-3 ml-md-4 ml-lg-5' role='button'><h1 class='navBtn'>Projects</h1></a>
     </div>
-    <!-- End of Top Menu -->
 
-    <!-- Name Box -->
-    <div style="background-image: url('images/image1.jpg');" class="box indexbox shadow">
-      <h1 class="name center">Matthew Peake</h1>
-      <h2 class="name center">Computer Science Student at Keele University</h2>
+    <!-- Project Showcase -->
+    <div class="row my-3 my-sm-4 my-xl-5 flex-grow-1 overflow-hidden">
+        <div class="col-4 hide mh-100 my-auto overflow-auto p-0">
+          <h2 class="showcase">Project Showcase</h2>
+          <h1>Flocking behaviour</br>using Boids algorithm</h1>
+        </div>
+        <div class='col m-0 p-0 mh-100 overflow-auto'>
+            <div class='row flex-grow-1' id="projectShowcase"></div>
+        </div>
     </div>
-    <!-- End of Name Box -->
-
-    <!-- About Box -->
-    <div class="box aboutbox border border-light rounded mt-5">
-      <div class="row h-100 colmarginxs colmarginsm">
-        <div class="col-xl-8 col-lg-7 col-md-8 col-sm-7 col-2 my-auto hidexs">
-          <h1 class="about center hidexs">More about me...</h1>
-        </div>
-        <div class="col-sm-1 col-6 text-center my-auto mr-xl-4 mr-lg-n4 mr-md-5 mr-sm-5">
-          <i class="fab fa-linkedin fa-5x" style="color: white;"></i>
-        </div>
-        <div class="col-sm-2 col-6 text-center my-auto">
-          <a role="button" href="cv" class="btn btn-light btn-lg"><i class="fas fa-file-alt"></i> <span class="short-cv">CV</span><span class="long-cv">Curriculum Vitae</span></a>
-        </div>
-      </div>
-    </div>
-    <!-- End of About Box-->
-
-    <!-- Portfolio Box -->
-    <div style="background-image: url('images/portfolio.jpg'); text-align: center;" class="box portfoliobox bg-secondary mt-5 shadow">
-      <h1 class="portfolio center" style="display: inline-block;">Portfolio</h1>
-    </div>
-    <div class="box portfolioinfobox bg-dark shadow">
-      <div class="row h-100 colmarginxs colmarginsm">
-        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-8 col-4 my-auto hidexs">
-          <h2 class="portfolio center hidexs">A list of personal and academic projects...</h2>
-        </div>
-        <div class="col-sm-2 col-12 my-auto text-center">
-          <a href="portfolio" role="button" class="btn btn-light btn-lg">View Here</a>
-        </div>
-      </div>
-    </div>
-    <!-- End of Portfolio Box -->
 
     <!-- Footer -->
-    <footer id="sticky-footer" class="py-4 mt-5 text-white-50">
-      <div class="container text-center">
-        <small>©2019 All Rights Reserved. // <a class="text-white" href="https://www.mattpeake.com/"> mattpeake.com</a> by Matthew Peake</small>
-      </div>
-    </footer>
-    <!-- Footer -->
+    <div class="row flex-shrink-0">
+        <ul class="col-8 col-sm-6 col-md-4 icons">
+          <li><a href="https://twitter.com/mattpeake21" class="icon brands fa-twitter"></a></li>
+          <li><a href="https://www.linkedin.com/in/mattpeake21/" class="icon brands fa-linkedin"></a></li>
+          <li><a href="https://www.hackerrank.com/mattpeake" class="icon brands fa-hackerrank"></a></li>
+          <li><a href="https://github.com/mattpeake21" class="icon brands fa-github"></a></li>
+        </ul>
+        <hr class="col line" >
+    </div>
   </body>
-  <!-- End of Body -->
 </html>
