@@ -137,7 +137,7 @@ ul.icons li .icon {
     h1.navBtn {
       font-size: 1rem;
     }
-    
+
     div.logo {
       width: 40px;
       height: 40px;
@@ -145,6 +145,9 @@ ul.icons li .icon {
 
     .badge {
       font-size: 0.5rem;
+    }
+    .btn {
+      font-size: 0.65rem;
     }
 
     ul.icons li .icon {
