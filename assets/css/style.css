@@ -11,7 +11,7 @@ h1.navBtn {
   font-size: 1.75rem;
   display: inline-block;
   padding-top: 0.5rem;
-  border-bottom: 8px solid transparent;
+  border-bottom: 4px solid transparent;
 }
 h1.navBtn:hover {
   border-bottom: 4px solid black;
