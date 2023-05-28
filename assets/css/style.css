@@ -120,6 +120,19 @@ ul.icons li .icon {
   font-family: 'Font Awesome 5 Brands';
 }
 
+.card-columns {
+  column-count: 2;
+}
+
+/* Hide browser scrollbar for overflow div */
+.hidescroll::-webkit-scrollbar {
+  display: none;
+}
+.hidescroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /* -----------------------------------------------------------SCREEN SIZES--------------------------------------------------------------------------- */
   /* BOOTSRAP XS */
   @media (max-width: 575px){
@@ -207,7 +220,7 @@ ul.icons li .icon {
     }
 
     .card-columns {
-      column-count: 2;
+      column-count: 1;
     }
   }
 
