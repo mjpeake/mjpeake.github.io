@@ -6,6 +6,7 @@
     "meta-viewport": "off",
     "meta-charset-utf-8": "off",
     "axe/language": "off",
-    "axe/text-alternatives": "off"
+    "axe/text-alternatives": "off",
+    "apple-touch-icons": "off"
   }
 }
