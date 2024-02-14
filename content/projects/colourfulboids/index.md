@@ -6,9 +6,15 @@ draft = false
 github = 'https://github.com/mjpeake/colourfulboids'
 language-icon = 'fa-js'
 tags=["Javascript","GenerativeArt","Boids"]
-js.script = ["https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js","https://cdn.jsdelivr.net/gh/mjpeake/colourfulboids/canvas.js","https://cdn.jsdelivr.net/gh/mjpeake/colourfulboids/boid.js"]
-js.adapter = ["js/projects/colourfulboids.js"]
 
+[[script]]
+  src = "https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"
+[[script]]
+  src = "https://cdn.jsdelivr.net/gh/mjpeake/colourfulboids/canvas.js"
+[[script]]
+  src = "https://cdn.jsdelivr.net/gh/mjpeake/colourfulboids/boid.js"
+[[adapter]]
+  src = "js/projects/colourfulboids.js"
 [[gallery]]
   type = 'Boids'
   location = '/images/gallery/colourfulboids/*'
