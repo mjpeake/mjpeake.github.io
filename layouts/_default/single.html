@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+{{ range .Params.js.script }}
+<script src="{{ . }}"></script>
+{{ end }}
+{{ range .Params.js.module }}
+<script type="module" src="{{ . }}"></script>
+{{ end }}
+{{ range .Params.js.adapter }}
+{{ $js := resources.Get . }}
+<script src="{{ $js.RelPermalink }}"></script>
+{{ end }}
+
+<div class="page-title-bar">
+  <a class="back-button" href="{{ .Parent.RelPermalink }}">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+      class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+    </svg>
+  </a>
+  <div class="page-title">
+    <p>{{ .Title }}</p>
+  </div>
+
+  <a href='{{ .Params.Github }}' class="title-icon-link"><i class='fab fa-github title-icon'></i></a>
+  <i class='fab {{ .Param "language-icon" }} title-icon'></i>
+</div>
+
+<div class="overflow">
+  {{ if eq .Params.page_type "project" }}{{ partial "single/project.html" . }}{{ end }}
+</div>
+{{ end }}

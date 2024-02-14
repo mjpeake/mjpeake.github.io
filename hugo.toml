@@ -1,0 +1,13 @@
+baseURL = 'https://www.mattpeake.com/'
+languageCode = 'en-us'
+title = 'mattpeake'
+
+[menu]
+[[menu.main]]
+  name = 'gallery'
+  url = '/gallery'
+  weight = 10
+[[menu.main]]
+  name = 'projects'
+  url = '/projects'
+  weight = 20
