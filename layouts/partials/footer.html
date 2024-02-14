@@ -1,19 +1,9 @@
-{{- with resources.Get "css/footer.css" }}
-{{- if eq hugo.Environment "development" }}
-<link rel="stylesheet" href="{{ .RelPermalink }}">
-{{- else }}
-{{- with . | minify | fingerprint }}
-<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-{{- end }}
-{{- end }}
-{{- end }}
-
 <div class="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mjpeake" class="icon fa-twitter"></a></li>
-        <li><a href="https://www.linkedin.com/in/mjpeake/" class="icon fa-linkedin"></a></li>
-        <li><a href="https://www.hackerrank.com/mattpeake" class="icon fa-hackerrank"></a></li>
-        <li><a href="https://github.com/mjpeake" class="icon fa-github"></a></li>
-    </ul>
+    <div class="icons">
+        <a href="https://twitter.com/mjpeake" class="icon fa-twitter"></a>
+        <a href="https://www.linkedin.com/in/mjpeake/" class="icon fa-linkedin"></a>
+        <a href="https://www.hackerrank.com/mattpeake" class="icon fa-hackerrank"></a>
+        <a href="https://github.com/mjpeake" class="icon fa-github"></a>
+    </div>
     <hr class="line">
 </div>
