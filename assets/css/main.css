@@ -142,7 +142,7 @@ p {
   top: 0;
   left: 0;
 
-  color: rgba(34, 34, 34, 0.025);
+  color: var(--accent);
   background-color: var(--bgcolor);
 }
 

@@ -7,9 +7,7 @@ draft = false
 [[script]]
   src = "https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"
 [[script]]
-  type = "module"
-  src = "https://cdn.jsdelivr.net/gh/mjpeake/flowfields/fields/tracefield.js"
+  src = "https://cdn.jsdelivr.net/npm/@mjpeake/flowfields@1.0.1/dist/flowfields.js"
 [[adapter]]
-  type = "module"
   src = "js/home/showcase.js"
 +++

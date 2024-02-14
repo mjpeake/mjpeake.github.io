@@ -6,8 +6,7 @@ draft = false
 github = 'https://github.com/mjpeake/flowfields'
 language-icon = 'fa-js'
 tags=["Javascript","GenerativeArt"]
-js.script = ["https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"]
-js.module = ["https://cdn.jsdelivr.net/gh/mjpeake/flowfields/flowfields.js"]
+js.script = ["https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js","https://cdn.jsdelivr.net/npm/@mjpeake/flowfields@1.0.1/dist/flowfields.js"]
 js.adapter= ["js/projects/flowfields.js"]
 +++
 

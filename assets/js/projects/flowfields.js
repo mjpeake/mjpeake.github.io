@@ -1,10 +1,5 @@
-window.onload = function () {
-    const cfg = {
-        particleCount: 10000,
-        particleContain: false,
-        particleColor: "red",
-        backgroundColor: "red",
-        backgroundRefresh: false,
-    }
-    new p5(flowfield(cfg), 'showcase');
-}
+$(document).ready(function () {
+    const color = $('#showcase').css("color");
+    const bgColor = $('#showcase').css("background-color");
+    new p5(FlowFields.TraceField(color, bgColor), 'showcase');
+});
