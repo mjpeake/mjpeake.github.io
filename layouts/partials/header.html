@@ -1,0 +1,25 @@
+{{- with resources.Get "css/header.css" }}
+  {{- if eq hugo.Environment "development" }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+<div class="navbar">
+    {{ $logo := resources.Get "images/logo.svg" }}
+    <a href="{{ .Site.BaseURL }}">
+        <div class="logo"><img src="{{ $logo.RelPermalink }}" alt="Logo"></div>
+    </a>
+    <div class="navtitle">
+        <!-- {{if not .IsHome}}<b>| {{ if .IsNode }}{{ .Title }}{{ else }}{{ .Parent.Title }}{{ end }}</b>{{end}} -->
+    </div>
+
+    <div class="navmenu">
+        {{ range .Site.Menus.main }}
+          <a href='{{ .URL }}' class='navmenu-text' role='button'>{{ .Name }}</a>
+        {{ end }}
+    </div>
+</div>

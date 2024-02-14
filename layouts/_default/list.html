@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="page-title-bar">
+  {{ with .Resources.GetMatch "icon.svg" }}
+  <div class="page-icon">
+    <img src="data:{{ .MediaType.Type }};base64,{{ .Content | base64Encode }}">
+  </div>
+  {{ end }}
+
+  <div class="page-title">
+    <p>{{ .Title }}</p>
+  </div>
+
+  <div class="filterBtns" id="filterBtns" onWheel="this.scrollLeft+=event.deltaY>0?100:-100">
+    <button class="filterBtn active" onclick="filterSelection('tagAll')"> Show all</button>
+  </div>
+</div>
+
+<div class="overflow">
+  {{ if eq .Params.page_type "cards" }}{{ partial "lists/cards.html" . }}
+  {{ else if eq .Params.page_type "gallery" }}{{ partial "lists/gallery.html" . }}
+  {{ end }}
+</div>
+{{ end }}

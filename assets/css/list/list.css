@@ -1,0 +1,106 @@
+.icon-button {
+	display: flex;
+
+	border: 0;
+	background-color: var(--bgcolor-off);
+	border-radius: 50%;
+	width: 2.5rem;
+	height: 2.5rem;
+
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	font-size: 1.25rem;
+	transition: .25s ease;
+
+	z-index: 1;
+	cursor: pointer;
+	color: #565656;
+	text-decoration: none;
+
+	svg {
+		width: 1em;
+		height: 1em;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--bgcolor);
+	}
+}
+
+.tags {
+	display: grid;
+	grid-auto-flow: column;
+	column-gap: 5px;
+
+	overflow: auto;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	/* Not selectable */
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.tag {
+	background-color: var(--bgcolor-off);
+	padding: 2px 8px 2px 8px;
+	border-radius: 15px;
+
+	width: auto;
+	white-space: nowrap;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.filterBtns {
+	display: grid;
+	grid-auto-flow: column;
+	column-gap: 5px;
+
+	overflow: auto;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	/* Not selectable */
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.filterBtn {
+	background-color: var(--bgcolor);
+	padding: 2px 8px 2px 8px;
+	border-radius: 15px;
+
+	width: auto;
+	white-space: nowrap;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+/* Add a light grey background on mouse-over */
+.filterBtn:hover {
+	background-color: var(--bgcolor-off);
+}
+
+/* Add a dark background to the active button */
+.filterBtn.active {
+	background-color: var(--accent);
+	color: var(--bgcolor);
+}
+
+.show {
+	display: block !important;
+}
+
+.filterElement {
+	display: none;
+}

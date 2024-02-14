@@ -1,0 +1,105 @@
+{{ $col1 := slice }}
+{{ $col2 := slice }}
+{{ $col3 := slice }}
+{{ $col4 := slice }}
+{{ $col1height := 0 }}
+{{ $col2height := 0 }}
+{{ $col3height := 0 }}
+{{ $col4height := 0 }}
+{{ $typemap := dict }}
+
+
+{{ $images := slice }}
+{{ $imageheights := slice }}
+
+{{ range .Params.Gallery }}
+{{ $type := .type }}
+{{ range resources.Match .location }}
+{{ $images = $images | append . }}
+{{ $typemap = merge $typemap (dict .RelPermalink $type) }}
+{{ if ne .MediaType.SubType "svg" }}
+{{ $imageheights = $imageheights | append .Height }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ $averageheight := div (math.Sum $imageheights) ($imageheights | len)}}
+
+{{ range (shuffle $images) }}
+{{ $image := . }}
+
+
+
+{{ range (seq 4 | shuffle) }}
+{{ if eq . 1 }}{{ if le $col1height $col2height $col3height $col4height}}
+{{ $col1 = $col1 | append $image }}
+{{ if ne $image.MediaType.SubType "svg" }}{{ $col1height = add $col1height $image.Height }}{{ else }}{{$col1height = add $col1height (mul $averageheight 2)}}{{ end }}{{ break }}
+{{end}}{{ end }}
+{{ if eq . 2 }}{{ if le $col2height $col1height $col3height $col4height}}
+{{ $col2 = $col2 | append $image }}
+{{ if ne $image.MediaType.SubType "svg" }}{{ $col2height = add $col2height $image.Height }}{{ else }}{{$col2height = add $col2height (mul $averageheight 2)}}{{ end }}{{ break }}
+{{end}}{{ end }}
+{{ if eq . 3 }}{{ if le $col3height $col1height $col2height $col4height}}
+{{ $col3 = $col3 | append $image }}
+{{ if ne $image.MediaType.SubType "svg" }}{{ $col3height = add $col3height $image.Height }}{{ else }}{{$col3height = add $col3height (mul $averageheight 2)}}{{ end }}{{ break }}
+{{end}}{{ end }}
+{{ if eq . 4 }}{{ if le $col4height $col1height $col2height $col3height}}
+{{ $col4 = $col4 | append $image }}
+{{ if ne $image.MediaType.SubType "svg" }}{{ $col4height = add $col4height $image.Height }}{{ else }}{{$col4height = add $col4height (mul $averageheight 2)}}{{ end }}{{ break }}
+{{end}}{{ end }}
+{{ end }}
+
+{{ end }}
+
+<div class="gallery">
+  <div class="column">
+    {{ range $col1 }}
+    <img class="filterElement tagAll tag{{ index $typemap .RelPermalink }}" src="{{ .RelPermalink }}">
+    {{ end }}
+  </div>
+  <div class="column">
+    {{ range $col2 }}
+    <img class="filterElement tagAll tag{{ index $typemap .RelPermalink }}" src="{{ .RelPermalink }}">
+    {{ end }}
+  </div>
+  <div class="column">
+    {{ range $col3 }}
+    <img class="filterElement tagAll tag{{ index $typemap .RelPermalink }}" src="{{ .RelPermalink }}">
+    {{ end }}
+  </div>
+  <div class="column">
+    {{ range $col4 }}
+    <img class="filterElement tagAll tag{{ index $typemap .RelPermalink }}" src="{{ .RelPermalink }}">
+    {{ end }}
+  </div>
+</div>
+
+<script>
+  var tags = [{{ range $typemap }}"{{ . }}",{{end}}]
+  tags = [...new Set(tags)];
+  var div = document.getElementById('filterBtns');
+  for (let tag of tags) {
+    onClick = "filterSelection(\'tag" + tag + "\')"
+    div.innerHTML += '<button class="filterBtn" onclick=' + onClick + '>' + tag + '</button>'
+  }
+</script>
+
+<script>
+  function filterSelection(c) {
+    for (let e of document.getElementsByClassName("filterElement")) {
+      e.classList.remove("show");
+      if ($(e).hasClass(c)) e.classList.add("show");
+    }
+  }
+
+  var buttons = document.querySelectorAll(".filterBtn");
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      buttons.forEach(function (btn) {
+        btn.classList.remove("active");
+      });
+      this.classList.add("active");
+    });
+  });
+  filterSelection("tagAll");
+</script>

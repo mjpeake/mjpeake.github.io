@@ -1,0 +1,70 @@
+<div class="card-list">
+    {{ range .Pages }}
+    <article class="card filterElement tagAll {{ range .Params.Tags }}tag{{ . }} {{ end }}">
+        {{ $image := .Resources.GetMatch "thumbnail.png" }}
+        {{ with $image }}
+        <figure class="card-image">
+            <img src="{{ .RelPermalink }}" alt="An image showcasing the {{ .Title }} project in action." />
+        </figure>
+        {{ end }}
+        <div class="card-header">
+            <h2 href="#">{{ .Title }}</h2>
+            <a class="icon-button" href="{{ .Permalink }}">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+            </a>
+        </div>
+        <div class="card-footer">
+            <div class="card-meta">
+                <p><small><i class='fab {{ .Param "language-icon" }} fa-2x mr-3' data-toggle='popover'
+                            data-content='Javascript'></i></small></p>
+            </div>
+            <div class="card-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z" />
+                </svg>
+                <div class="tags" onWheel="this.scrollLeft+=event.deltaY>0?100:-100">
+                    {{ range .Params.Tags }}
+                    <div class="tag">{{ . }}</div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </article>
+    {{ end }}
+</div>
+
+<script>
+    var tags = [{{ range .Pages }}{{ range.Params.Tags }} "{{ . }}", {{end}}{{end}}]
+    tags = [...new Set(tags)];
+    var div = document.getElementById('filterBtns');
+    for (let tag of tags) {
+      onClick = "filterSelection(\'tag" + tag + "\')"
+      div.innerHTML += '<button class="filterBtn" onclick=' + onClick + '>' + tag + '</button>'
+    }
+  </script>
+  
+  <script>
+    function filterSelection(c) {
+      for (let e of document.getElementsByClassName("filterElement")) {
+        e.classList.remove("show");
+        if ($(e).hasClass(c)) e.classList.add("show");
+      }
+    }
+  
+    var buttons = document.querySelectorAll(".filterBtn");
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        buttons.forEach(function (btn) {
+          btn.classList.remove("active");
+        });
+        this.classList.add("active");
+      });
+    });
+    filterSelection("tagAll");
+  </script>
