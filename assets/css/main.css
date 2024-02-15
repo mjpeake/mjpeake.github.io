@@ -150,20 +150,23 @@ p {
 /* -----------------------------------------------------------SCREEN SIZES--------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   header {
-    padding-left: var(--y-padding-md);
-    padding-right: var(--y-padding-md);
+    padding: 0 var(--y-padding-md) 0 var(--y-padding-md);
   }
 
   footer {
-    padding-left: var(--y-padding-md);
-    padding-right: var(--y-padding-md);
+    padding: 0 var(--y-padding-md) 0 var(--y-padding-md);
   }
 
   .page-title-bar {
     column-gap: 0.75rem;
     grid-template-columns: auto 1fr auto;
-    padding-left: var(--y-padding-md);
-    padding-right: var(--y-padding-md);
+    padding: 0.75rem var(--y-padding-md) 0 var(--y-padding-md);
+  }
+
+  .page-title {
+    p {
+      font-size: 1.25rem;
+    }
   }
 
   .logo {
@@ -175,7 +178,12 @@ p {
 
 @media (min-width: 768px) and (max-width: 1200px) {
   .page-title-bar {
-    padding-left: var(--y-padding-lg);
-    padding-right: var(--y-padding-lg);
+    padding: 0.75rem var(--y-padding-lg) 0 var(--y-padding-lg);
+  }
+
+  .page-title {
+    p {
+      font-size: 1.75rem;
+    }
   }
 }
