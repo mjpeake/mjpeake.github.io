@@ -81,9 +81,7 @@ footer {
   grid-auto-flow: column;
   grid-template-columns: auto 1fr auto;
   column-gap: 0.75rem;
-
-  padding-left: 15vw;
-  padding-right: 15vw;
+  padding: 0 15vw 1rem 15vw;
   align-items: center;
 }
 
@@ -103,8 +101,6 @@ footer {
 .overflow {
   height: 100%;
   overflow: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 
   &::-webkit-scrollbar {
     display: none;
@@ -159,8 +155,8 @@ p {
 
   .page-title-bar {
     column-gap: 0.75rem;
-    grid-template-columns: auto 1fr auto;
-    padding: 0.75rem var(--y-padding-md) 0 var(--y-padding-md);
+    grid-template-columns: auto 1fr;
+    padding: 0.75rem var(--y-padding-md) 0.5rem var(--y-padding-md);
   }
 
   .page-title {
@@ -178,7 +174,7 @@ p {
 
 @media (min-width: 768px) and (max-width: 1200px) {
   .page-title-bar {
-    padding: 0.75rem var(--y-padding-lg) 0 var(--y-padding-lg);
+    padding: 0.75rem var(--y-padding-lg) 0.5rem var(--y-padding-lg);
   }
 
   .page-title {

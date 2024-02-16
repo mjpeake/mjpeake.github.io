@@ -1,11 +1,9 @@
 .project-showcase-body {
     display: grid;
+    grid-template-rows: auto 1fr auto;
     row-gap: 3vh;
 
-    padding-top: 1rem;
-    padding-left: var(--y-padding-xl);
-    padding-right: var(--y-padding-xl);
-    grid-template-rows: auto 1fr auto;
+    padding: 0 var(--y-padding-xl) 0 var(--y-padding-xl);
 }
 
 .title-icon {
@@ -270,8 +268,8 @@
 
 @media (max-width: 768px) {
     .project-showcase-body {
-        padding-left: var(--y-padding-md);
-        padding-right: var(--y-padding-md);
+        padding: 0.25rem var(--y-padding-md) 0.25rem var(--y-padding-md);
+        row-gap: 2vh;
     }
 
     .column {
@@ -296,8 +294,8 @@
 
 @media (min-width: 768px) and (max-width: 1200px) {
     .project-showcase-body {
-        padding-left: var(--y-padding-lg);
-        padding-right: var(--y-padding-lg);
+        padding: 0.5rem var(--y-padding-lg) 0.5rem var(--y-padding-lg);
+        row-gap: 2vh;
     }
 
     .column {
