@@ -1,31 +1,3 @@
-.tags {
-	display: grid;
-	grid-auto-flow: column;
-	column-gap: 5px;
-
-	overflow: auto;
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-
-	/* Not selectable */
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
-.tag {
-	background-color: var(--bgcolor-off);
-	padding: 2px 8px 2px 8px;
-	border-radius: 15px;
-
-	width: auto;
-	white-space: nowrap;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
-}
-
 .filterBtns {
 	display: grid;
 	grid-auto-flow: column;

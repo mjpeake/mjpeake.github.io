@@ -16,7 +16,6 @@ tags=["Javascript","GenerativeArt","Boids"]
 [[adapter]]
   src = "js/projects/colourfulboids.js"
 [[gallery]]
-  type = 'Boids'
   location = '/images/gallery/colourfulboids/*'
 +++
 

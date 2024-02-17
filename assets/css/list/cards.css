@@ -64,22 +64,9 @@
 		font-weight: 600;
 		font-size: 1.375rem;
 		line-height: 1.25;
-		padding-right: 1rem;
 		text-decoration: none;
-		color: inherit;
-		will-change: transform;
-
-		&:after {
-			content: "";
-			position: absolute;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-		}
+		color: var(--accent);
 	}
-
-
 }
 
 
@@ -111,6 +98,40 @@
 		width: 1em;
 		height: 1em;
 		margin-right: .25em;
+	}
+}
+
+.language-icon {
+	font-size: 1.6rem;
+}
+
+.tags {
+	display: grid;
+	grid-auto-flow: column;
+	column-gap: 5px;
+
+	overflow: auto;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	/* Not selectable */
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.tag {
+	background-color: var(--bgcolor-off);
+	padding: 2px 8px 2px 8px;
+	border-radius: 15px;
+
+	width: auto;
+	white-space: nowrap;
+
+	font-size: 1rem;
+
+	&::-webkit-scrollbar {
+		display: none;
 	}
 }
 
@@ -172,6 +193,12 @@
 
 
 @media (max-width: 768px) {
+	.card-header {
+		h2 {
+			font-size: 1.25rem;
+		}
+	}
+
 	.card-list {
 		grid-template-columns: 100% !important;
 		row-gap: 1.5rem;
@@ -182,6 +209,18 @@
 		width: 2rem;
 		height: 2rem;
 		font-size: 1rem;
+	}
+
+	.language-icon {
+		font-size: 1.35rem;
+	}
+
+	.tags {
+		column-gap: 2px;
+	}
+	
+	.tag {
+		font-size: 0.75rem;
 	}
 }
 
@@ -195,5 +234,9 @@
 		width: 2.25rem;
 		height: 2.25rem;
 		font-size: 1rem;
+	}
+
+	.language-icon {
+		font-size: 1.5rem;
 	}
 }

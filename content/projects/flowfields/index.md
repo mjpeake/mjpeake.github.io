@@ -13,6 +13,8 @@ tags=["Javascript","GenerativeArt"]
   src = "https://cdn.jsdelivr.net/npm/@mjpeake/flowfields@1.0.1/dist/flowfields.js"
 [[adapter]]
   src = "js/projects/flowfields.js"
+[[gallery]]
+  location = '/images/gallery/flowfields/*'
 +++
 
 Flow Fields is a JavaScript library for creating mesmerizing flow field visualizations. It provides several types of flow fields, each offering unique patterns and effects.
