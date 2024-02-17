@@ -15,6 +15,56 @@ tags=["Javascript","GenerativeArt"]
   src = "js/projects/flowfields.js"
 +++
 
-Tempor proident minim aliquip reprehenderit dolor et ad anim Lorem duis sint eiusmod. Labore ut ea duis dolor. Incididunt consectetur proident qui occaecat incididunt do nisi Lorem. Tempor do laborum elit laboris excepteur eiusmod do. Eiusmod nisi excepteur ut amet pariatur adipisicing Lorem.
+Flow Fields is a JavaScript library for creating mesmerizing flow field visualizations. It provides several types of flow fields, each offering unique patterns and effects.
 
-Occaecat nulla excepteur dolore excepteur duis eiusmod ullamco officia anim in voluptate ea occaecat officia. Cillum sint esse velit ea officia minim fugiat. Elit ea esse id aliquip pariatur cupidatat id duis minim incididunt ea ea. Anim ut duis sunt nisi. Culpa cillum sit voluptate voluptate eiusmod dolor. Enim nisi Lorem ipsum irure est excepteur voluptate eu in enim nisi. Nostrud ipsum Lorem anim sint labore consequat do.
+## Installation
+
+You can install FlowFields via npm:
+
+```bash
+npm i @mjpeake/flowfields
+```
+
+## Usage
+
+To use FlowFields in your project, include the library in your HTML file and initialize it with the appropriate parameters. Here's an example of how to create a TraceField visualization:
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Flow Fields</title>
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mjpeake/flowfields@1.0.1/dist/flowfields.js"></script>
+</head>
+
+<body>
+  <div id="flowfield"></div>
+  <script>
+    $(document).ready(function () {
+      // Get colors from CSS
+      const color = $('#flowfield').css("color");
+      const bgColor = $('#flowfield').css("background-color");
+      // Initialize TraceField
+      new p5(FlowFields.TraceField(color, bgColor), "flowfield");
+    });
+  </script>
+</body>
+</html>
+```
+
+This example initializes a TraceField visualization using the colors defined in the CSS of the `flowfield` element.
+
+## Available Fields
+
+- **DotField**: Creates a field of dots with varying sizes and positions.
+- **LineField**: Generates a field of lines indicating flow direction.
+- **ImageTraceField**: Uses an image to generate a field with particles tracing its features.
+- **TraceField**: Displays particles moving within the flow field.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/mjpeake/flowfields/blob/main/LICENSE) file for details.
