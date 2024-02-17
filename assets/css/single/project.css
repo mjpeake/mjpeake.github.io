@@ -251,11 +251,20 @@
     padding: 0 4px;
 }
 
-.column img {
-    background-color: var(--bgcolor);
+.image-container {
     margin-top: 8px;
-    vertical-align: middle;
+    overflow: hidden;
+}
+
+.image-container img {
     width: 100%;
+    display: block;
+    transition: transform .4s;
+}
+
+.image-container img:hover {
+    transform: scale(1.2);
+    transform-origin: 50% 50%;
 }
 
 
