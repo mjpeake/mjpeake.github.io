@@ -1,16 +1,4 @@
 {{ define "main" }}
-
-{{ range .Params.js.script }}
-<script src="{{ . }}"></script>
-{{ end }}
-{{ range .Params.js.module }}
-<script type="module" src="{{ . }}"></script>
-{{ end }}
-{{ range .Params.js.adapter }}
-{{ $js := resources.Get . }}
-<script src="{{ $js.RelPermalink }}"></script>
-{{ end }}
-
 <div class="page-title-bar">
   <a class="back-button" href="{{ .Parent.RelPermalink }}">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
