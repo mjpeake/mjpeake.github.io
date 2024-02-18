@@ -1,0 +1,29 @@
+<script>
+    var tags = [{{ range .tags }}"{{ . }}", {{ end }}]
+    tags = [...new Set(tags)];
+    var div = document.getElementById('filterBtns');
+    for (let tag of tags) {
+        onClick = "filterSelection(\'tag" + tag + "\')"
+        div.innerHTML += '<button class="filterBtn" onclick=' + onClick + '>' + tag + '</button>'
+    }
+</script>
+
+<script>
+    function filterSelection(c) {
+        for (let e of document.getElementsByClassName("filterElement")) {
+            e.classList.remove("show");
+            if ($(e).hasClass(c)) e.classList.add("show");
+        }
+    }
+
+    var buttons = document.querySelectorAll(".filterBtn");
+    buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            buttons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
+            this.classList.add("active");
+        });
+    });
+    filterSelection("tagAll");
+</script>

@@ -28,8 +28,6 @@
 {{ range (shuffle $images) }}
 {{ $image := . }}
 
-
-
 {{ range (seq 4 | shuffle) }}
 {{ if eq . 1 }}{{ if le $col1height $col2height $col3height $col4height}}
 {{ $col1 = $col1 | append $image }}
@@ -86,32 +84,6 @@ $col4height (mul $averageheight 2)}}{{ end }}{{ break }}
   </div>
 </div>
 
-<script>
-  var tags = [{{ range $typemap }}"{{ . }}",{{end}}]
-  tags = [...new Set(tags)];
-  var div = document.getElementById('filterBtns');
-  for (let tag of tags) {
-    onClick = "filterSelection(\'tag" + tag + "\')"
-    div.innerHTML += '<button class="filterBtn" onclick=' + onClick + '>' + tag + '</button>'
-  }
-</script>
-
-<script>
-  function filterSelection(c) {
-    for (let e of document.getElementsByClassName("filterElement")) {
-      e.classList.remove("show");
-      if ($(e).hasClass(c)) e.classList.add("show");
-    }
-  }
-
-  var buttons = document.querySelectorAll(".filterBtn");
-  buttons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      buttons.forEach(function (btn) {
-        btn.classList.remove("active");
-      });
-      this.classList.add("active");
-    });
-  });
-  filterSelection("tagAll");
-</script>
+{{ if .IsSection }}
+{{ partial "lists/filter.html" (dict "context" . "tags" $typemap) }}
+{{ end }}
