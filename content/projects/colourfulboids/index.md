@@ -19,6 +19,43 @@ tags=["Javascript","GenerativeArt","Boids"]
   location = '/images/gallery/colourfulboids/*'
 +++
 
-Tempor proident minim aliquip reprehenderit dolor et ad anim Lorem duis sint eiusmod. Labore ut ea duis dolor. Incididunt consectetur proident qui occaecat incididunt do nisi Lorem. Tempor do laborum elit laboris excepteur eiusmod do. Eiusmod nisi excepteur ut amet pariatur adipisicing Lorem.
+This JavaScript project simulates a flock of colorful boids moving around a canvas. The boids exhibit flocking behavior, including alignment, cohesion, and separation. Each boid is represented by a series of colored dots forming its body.
 
-Occaecat nulla excepteur dolore excepteur duis eiusmod ullamco officia anim in voluptate ea occaecat officia. Cillum sint esse velit ea officia minim fugiat. Elit ea esse id aliquip pariatur cupidatat id duis minim incididunt ea ea. Anim ut duis sunt nisi. Culpa cillum sit voluptate voluptate eiusmod dolor. Enim nisi Lorem ipsum irure est excepteur voluptate eu in enim nisi. Nostrud ipsum Lorem anim sint labore consequat do.
+## Installation
+
+To use this project, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mjpeake/colourfulboids
+
+2. Open the `index.html` file in your web browser.
+
+## Usage
+
+Once the project is running in your browser, you'll see a flock of colorful boids moving around the canvas. You can adjust various parameters of the simulation by modifying the JavaScript code:
+
+- `perceptionRadius`: The radius within which boids perceive others and flock together.
+- `separationRadius`: The radius within which boids avoid crowding each other.
+- `maxForce` and `maxSpeed`: Control the maximum force and speed of boids' movement.
+- `alignmentCoef`, `cohesionCoef`, and `separationCoef`: Coefficients to adjust the influence of alignment, cohesion, and separation behaviors.
+
+Additionally, you can toggle debugging information by setting the `debug` variable to `true` or `false`.
+
+## Features
+
+- **Flocking Behavior**: The boids exhibit realistic flocking behavior, including alignment, cohesion, and separation.
+- **Colorful Visualization**: Each boid is represented by a series of colored dots forming its body, creating an aesthetically pleasing visualization.
+- **Dynamic Population**: The population size of the flock adjusts based on the size of the canvas and the specified population density.
+
+## Customization
+
+Feel free to customize the project according to your preferences. You can modify the colors, behaviors, and visualizations to create different effects and interactions.
+
+## Credits
+
+This project was inspired by Craig Reynolds' classic [boids](https://www.red3d.com/cwr/boids/) algorithm for simulating flocking behavior.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/mjpeake/colourfulboids/blob/master/LICENSE) file for details.
