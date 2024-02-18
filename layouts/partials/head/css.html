@@ -30,6 +30,18 @@
   {{- end }}
 {{- end }}
 
+{{ if .IsHome }}
+  {{- with resources.Get "css/home.css" }}
+    {{- if eq hugo.Environment "development" }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{- else }}
+      {{- with . | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{ end }}
+
 {{ if .IsSection }}
   {{- with resources.Get "css/list/list.css" }}
     {{- if eq hugo.Environment "development" }}
