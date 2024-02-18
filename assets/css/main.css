@@ -72,10 +72,6 @@ footer {
   margin-bottom: auto;
 }
 
-.home-showcase {
-  overflow: hidden;
-}
-
 .page-title-bar {
   display: grid;
   grid-auto-flow: column;
@@ -119,29 +115,6 @@ h2 {
 p {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
-
-.logo {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-  img {
-    display: block;
-    width: 3rem;
-    pointer-events: none;
-  }
-}
-
-#home-showcase {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-
-  color: var(--accent);
-  background-color: var(--bgcolor);
-}
-
 
 /* -----------------------------------------------------------SCREEN SIZES--------------------------------------------------------------------------- */
 @media (max-width: 768px) {

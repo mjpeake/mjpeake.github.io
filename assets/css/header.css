@@ -10,6 +10,18 @@
     padding: 0;
 }
 
+.logo {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    img {
+        display: block;
+        width: 3rem;
+        pointer-events: none;
+    }
+}
+
 .navmenu {
     display: grid;
     grid-auto-flow: column;
@@ -30,14 +42,14 @@
     border-bottom: 4px solid black;
 }
 
-@media (max-width: 575px){
+@media (max-width: 575px) {
     .navmenu-text {
-      font-size: 1rem;
+        font-size: 1rem;
     }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
     .navmenu-text {
-      font-size: 1.25rem;
+        font-size: 1.25rem;
     }
 }

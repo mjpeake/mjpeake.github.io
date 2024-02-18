@@ -3,7 +3,8 @@
     grid-template-rows: auto 1fr auto;
     row-gap: 3vh;
 
-    padding: 0 var(--y-padding-xl) 0 var(--y-padding-xl);
+    width: 70vw;
+    margin: 0 auto 0 auto;
 }
 
 .title-icon {
@@ -13,6 +14,7 @@
 }
 
 .title-icon-link {
+
     &:hover,
     &:focus {
         opacity: .75;
@@ -185,6 +187,16 @@
 .project-box-content {
     padding: 1% 2% 1% 2%;
     height: 100%;
+    font-size: 1vw;
+}
+
+div.highlight {
+    max-width: 100%;
+}
+
+div.highlight pre {
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .btn {
@@ -277,8 +289,13 @@
 
 @media (max-width: 768px) {
     .project-showcase-body {
-        padding: 0.25rem var(--y-padding-md) 0.25rem var(--y-padding-md);
+        margin: 0.25rem auto 0.25rem auto;
+        width: 90vw;
         row-gap: 2vh;
+    }
+
+    .project-box-content {
+        font-size: 2vw;
     }
 
     .column {
@@ -303,8 +320,13 @@
 
 @media (min-width: 768px) and (max-width: 1200px) {
     .project-showcase-body {
-        padding: 0.5rem var(--y-padding-lg) 0.5rem var(--y-padding-lg);
+        margin: 0.5rem auto 0.5rem auto;
+        width: calc(100vw - 12rem);
         row-gap: 2vh;
+    }
+
+    .project-box-content {
+        font-size: 1.5vw;
     }
 
     .column {

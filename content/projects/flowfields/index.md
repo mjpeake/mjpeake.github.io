@@ -22,16 +22,20 @@ Flow Fields is a JavaScript library for creating mesmerizing flow field visualiz
 ## Installation
 
 You can install FlowFields via npm:
-
 ```bash
 npm i @mjpeake/flowfields
+```
+
+Alternatively, you can also use the following script tag reference:
+```html
+<script src="https://cdn.jsdelivr.net/npm/@mjpeake/flowfields@1.0.1/dist/flowfields.js"></script>
 ```
 
 ## Usage
 
 To use FlowFields in your project, include the library in your HTML file and initialize it with the appropriate parameters. Here's an example of how to create a TraceField visualization:
 
-```html
+```html {linenos=inline}
 <!DOCTYPE html>
 <html>
 
