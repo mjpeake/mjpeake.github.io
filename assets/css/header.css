@@ -1,8 +1,6 @@
-/* Inner header css styles */
-
 .navbar {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto;
     grid-auto-flow: column;
 
     align-items: center;
@@ -10,11 +8,6 @@
     height: 100%;
 
     padding: 0;
-}
-
-.navtitle {
-    height: 100%;
-    vertical-align: text-top;
 }
 
 .navmenu {
