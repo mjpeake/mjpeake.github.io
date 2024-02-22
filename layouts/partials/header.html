@@ -1,12 +1,10 @@
 <div class="navbar">
     {{ $logo := resources.Get "images/logo.svg" }}
-    <a href="{{ .Site.BaseURL }}">
-        <div class="logo"><img src="{{ $logo.RelPermalink }}" alt="Logo"></div>
-    </a>
+    <div class="logo"><a href="{{ .Site.BaseURL }}"><img src="{{ $logo.RelPermalink }}" alt="Logo"></a></div>
 
     <div class="navmenu">
         {{ range .Site.Menus.main }}
-          <a href='{{ .URL }}' class='navmenu-text' role='button'>{{ .Name }}</a>
+        <a href='{{ .URL }}' class='navmenu-text' role='button'>{{ .Name }}</a>
         {{ end }}
     </div>
 </div>

@@ -1,1 +1,1 @@
-new p5(colourfulBoids, "showcase");
+ColourfulBoids("showcase");

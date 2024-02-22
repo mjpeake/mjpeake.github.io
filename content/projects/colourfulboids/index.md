@@ -8,11 +8,7 @@ language-icon = 'fa-js'
 tags=["Javascript","GenerativeArt","Boids"]
 
 [[script]]
-  src = "https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"
-[[script]]
-  src = "https://cdn.jsdelivr.net/gh/mjpeake/colourfulboids/canvas.js"
-[[script]]
-  src = "https://cdn.jsdelivr.net/gh/mjpeake/colourfulboids/boid.js"
+  src = "https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.0/dist/colourfulboids.js"
 [[adapter]]
   src = "js/projects/colourfulboids.js"
 [[gallery]]
@@ -23,34 +19,55 @@ This JavaScript project simulates a flock of colorful boids moving around a canv
 
 ## Installation
 
-To use this project, follow these steps:
+You can install Colourful Boids via npm:
+```bash
+npm i @mjpeake/colourfulboids
+```
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/mjpeake/colourfulboids
+Alternatively, you can also use the following script tag reference:
+```html
+<script src="https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.0/dist/colourfulboids.js"></script>
+```
 
-2. Open the `index.html` file in your web browser.
+## Parameters
+
+```javascript
+ColourfulBoids(parentElement, boidColor, backgroundColor);
+```
+
+- `parentElement`: The HTML element where the Boids canvas will be appended.
+- `boidColor`: Optional. The color of the Boids in hexadecimal notation. If not provided, a random palette will be used.
+- `backgroundColor`: Optional. The background color of the canvas in hexadecimal notation. If not provided, a random palette will be used.
 
 ## Usage
 
-Once the project is running in your browser, you'll see a flock of colorful boids moving around the canvas. You can adjust various parameters of the simulation by modifying the JavaScript code:
+To use Colourful Boids in your project, include the library in your HTML file and initialize it with the appropriate parameters. Here's an example:
 
-- `perceptionRadius`: The radius within which boids perceive others and flock together.
-- `separationRadius`: The radius within which boids avoid crowding each other.
-- `maxForce` and `maxSpeed`: Control the maximum force and speed of boids' movement.
-- `alignmentCoef`, `cohesionCoef`, and `separationCoef`: Coefficients to adjust the influence of alignment, cohesion, and separation behaviors.
+```html {linenos=inline}
+<!DOCTYPE html>
+<html>
 
-Additionally, you can toggle debugging information by setting the `debug` variable to `true` or `false`.
+<head>
+  <title>Colourful Boids</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.0/dist/colourfulboids.js"></script>
+  <script> ColourfulBoids("boids") </script>
+</head>
+
+<body>
+  <div id="boids"></div>
+</body>
+
+</htmL>
+```
+
+This example initializes a Colourful Boids visualization without defining any specific colours to be used, as a result the sketch will randomly select two contrasting colours.
 
 ## Features
 
 - **Flocking Behavior**: The boids exhibit realistic flocking behavior, including alignment, cohesion, and separation.
 - **Colorful Visualization**: Each boid is represented by a series of colored dots forming its body, creating an aesthetically pleasing visualization.
-- **Dynamic Population**: The population size of the flock adjusts based on the size of the canvas and the specified population density.
-
-## Customization
-
-Feel free to customize the project according to your preferences. You can modify the colors, behaviors, and visualizations to create different effects and interactions.
+- **Dynamic Population**: The population size of the flock adjusts based on the size of the canvas and the internally-specified population density.
 
 ## Credits
 
