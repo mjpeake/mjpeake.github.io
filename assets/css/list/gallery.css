@@ -3,6 +3,19 @@
     flex-wrap: wrap;
     overflow: hidden;
     padding: 1rem var(--y-padding-xl) 1rem var(--y-padding-xl);
+
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Create four equal columns that sits next to each other */
@@ -21,6 +34,7 @@
     width: 100%;
     display: block;
     transition: transform .4s;
+    cursor: pointer;
 }
 
 .image-container img:hover {
