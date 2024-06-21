@@ -1,41 +1,54 @@
 .card-list {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(30rem, calc(50% - 2rem)));
-	grid-template-rows: auto;
-	justify-content: center;
-	column-gap: 4rem;
-	row-gap: 2rem;
-
 	overflow: hidden;
-
 	padding: 1rem var(--y-padding-xl) 1rem var(--y-padding-xl);
+
+	animation: fadeInAnimation ease 2s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	column-count: 3;
+	column-gap: 4rem;
+
+	@for $i from 1 through 36 {
+		div:nth-child(#{$i}) {
+			$h: (
+				random(400) + 100) + px;
+			height: $h;
+			line-height: $h;
+		}
+	}
 }
 
 .card {
-	background-color: var(--bgcolor);
-	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-	border-radius: 15px;
-	overflow: hidden;
-	padding: 1.25rem;
-	margin-bottom: auto;
-	position: relative;
-	transition: .15s ease-in;
+	background-color: var(--bgcolor
+	);
+box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+border-radius: 15px;
+overflow: hidden;
+padding: 1.25rem;
+margin-bottom: 2rem;
+position: relative;
+transition: .15s ease-in;
 
-	border: 5px solid transparent;
+border: 5px solid transparent;
 
-	background-color: white;
+background-color: white;
 
-	&:hover,
-	&:focus-within {
-		border: 5px solid var(--accent);
+&:hover,
+&:focus-within {
+	border: 5px solid var(--accent);
 
-		box-shadow: 0 0 0 2px #16C79A, 0 10px 60px 0 rgba(#000, .1);
-		transform: translatey(-5px);
-	}
+	box-shadow: 0 0 0 2px #16C79A, 0 10px 60px 0 rgba(#000, .1);
+	transform: translatey(-5px);
+}
 
-	&:has(img) {
-		grid-row: span 3;
-	}
+&:has(img) {
+	grid-row: span 3;
+}
 }
 
 .card-image {
@@ -123,12 +136,13 @@
 .tag {
 	background-color: var(--bgcolor-off);
 	padding: 2px 8px 2px 8px;
-	border-radius: 15px;
+	border-radius: 8px;
 
 	width: auto;
 	white-space: nowrap;
 
 	font-size: 1rem;
+	font-family: var(--text-font);
 
 	&::-webkit-scrollbar {
 		display: none;
@@ -218,7 +232,7 @@
 	.tags {
 		column-gap: 2px;
 	}
-	
+
 	.tag {
 		font-size: 0.75rem;
 	}

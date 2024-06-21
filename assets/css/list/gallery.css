@@ -1,57 +1,181 @@
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    padding: 1rem var(--y-padding-xl) 1rem var(--y-padding-xl);
+  overflow: hidden;
+  padding: 0 var(--y-padding-xl) 1rem var(--y-padding-xl);
 
-    animation: fadeInAnimation ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  column-count: 3;
+  column-gap: 1rem;
+
+  @for $i from 1 through 36 {
+    div:nth-child(#{$i}) {
+      $h: (
+        random(400) + 100) + px;
+      height: $h;
+      line-height: $h;
+    }
+  }
 }
 
 @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
+  0% {
+    opacity: 0;
+  }
 
-/* Create four equal columns that sits next to each other */
-.column {
-    flex: calc((100% / 4) - (4px * 2));
-    max-width: calc((100% / 4) - (4px * 2));
-    padding: 0 4px;
+  100% {
+    opacity: 1;
+  }
 }
 
 .image-container {
-    margin-top: 8px;
-    overflow: hidden;
+  margin-bottom: 8px;
+  overflow: hidden;
 }
 
 .image-container img {
-    width: 100%;
-    display: block;
-    transition: transform .4s;
-    cursor: pointer;
+  width: 100%;
+  display: block;
+  transition: transform .4s;
+  cursor: pointer;
 }
 
 .image-container img:hover {
-    transform: scale(1.2);
-    transform-origin: 50% 50%;
+  transform: scale(1.2
+  );
+opacity: 0.7;
+transform-origin: 50% 50%;
 }
 
 @media (max-width: 768px) {
-    .column {
-        flex: 100%;
-        max-width: 100%;
-    }
+  .gallery {
+    columns: 2 15rem;
+    padding: 0 var(--y-padding-md) 1rem var(--y-padding-md);
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
-    .column {
-        flex: calc((100% / 2) - (4px * 2));
-        max-width: calc((100% / 2) - (4px * 2));
-    }
+  .gallery {
+    columns: 3 17rem;
+    padding: 0 var(--y-padding-lg) 1rem var(--y-padding-lg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Black w/ opacity */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: auto;
+  height: auto;
+  opacity: 1 !important;
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+/* Caption of Modal Image */
+.modal-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1200px;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  margin-top: 32px;
+}
+
+/* Add Animation */
+.modal-content,
+.modal-caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-atransform: scale(0)
+  }
+
+  to {
+    -webkit-transform: scale(1)
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+/* The Close Button */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }

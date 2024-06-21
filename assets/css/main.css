@@ -5,7 +5,7 @@
   --textcolor: #313131;
 
   --y-padding-md: 5vw;
-  --y-padding-lg: 6rem;
+  --y-padding-lg: 10vw;
   --y-padding-xl: 15vw;
 
   --breakpoint-xs: 0;
@@ -13,6 +13,15 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
+
+  --main-font: "Kollektif Bold", sans-serif;
+  --second-font: "Kollektif", sans-serif;
+  --text-font: "Gidole Regular", sans-serif;
+}
+
+::selection {
+  color: var(--bgcolor);
+  background: var(--textcolor);
 }
 
 html {
@@ -32,7 +41,7 @@ body {
   line-height: 1.5;
   text-align: left;
 
-  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-family: var(--text-font);
 
   display: grid;
   grid-template-rows: 9% 1fr 6%;
@@ -76,22 +85,26 @@ footer {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: auto 1fr auto;
-  column-gap: 0.75rem;
   padding: 0 15vw 1rem 15vw;
   align-items: center;
 }
 
 .page-title {
-  p {
+  h1 {
     margin: 0;
     font-weight: bold;
     font-size: 2rem;
   }
+  padding-left: 0.75rem;
 }
 
 .page-icon {
   width: 2rem;
   height: 2rem;
+
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .overflow {
@@ -104,16 +117,17 @@ footer {
 }
 
 h1 {
-  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-family: var(--main-font);
   color: var(--textcolor);
 }
 
 h2 {
+  font-family: var(--second-font);
   color: var(--textcolor);
 }
 
 p {
-  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-family: var(--text-font);
 }
 
 /* -----------------------------------------------------------SCREEN SIZES--------------------------------------------------------------------------- */
@@ -133,7 +147,7 @@ p {
   }
 
   .page-title {
-    p {
+    h1 {
       font-size: 1.25rem;
     }
   }
@@ -151,7 +165,7 @@ p {
   }
 
   .page-title {
-    p {
+    h1 {
       font-size: 1.75rem;
     }
   }
