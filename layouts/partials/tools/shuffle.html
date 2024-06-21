@@ -1,0 +1,8 @@
+{{- $items := . -}}
+{{- $length := len $items -}}
+{{- $indices := (seq 0 (sub $length 1)) | shuffle -}}
+{{- $shuffled := slice -}}
+{{- range $indices }}
+  {{- $shuffled = $shuffled | append (index $items .) -}}
+{{- end }}
+{{- return $shuffled -}}

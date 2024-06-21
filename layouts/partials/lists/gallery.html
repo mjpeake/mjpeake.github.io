@@ -1,89 +1,54 @@
-{{ $col1 := slice }}
-{{ $col2 := slice }}
-{{ $col3 := slice }}
-{{ $col4 := slice }}
-{{ $col1height := 0 }}
-{{ $col2height := 0 }}
-{{ $col3height := 0 }}
-{{ $col4height := 0 }}
 {{ $typemap := dict }}
+{{ $shuffledImages := slice }}
 
-
-{{ $images := slice }}
-{{ $imageheights := slice }}
-
-{{ range .Params.Gallery }}
+{{ range .Params.gallery }}
 {{ $type := .type }}
-{{ range resources.Match .location }}
-{{ $images = $images | append . }}
+{{ $images := resources.Match .location }}
+
+{{ range $images }}
+{{ $shuffledImages = $shuffledImages | append (dict "image" . "type" $type) }}
 {{ $typemap = merge $typemap (dict .RelPermalink $type) }}
-{{ if ne .MediaType.SubType "svg" }}
-{{ $imageheights = $imageheights | append .Height }}
-{{ end }}
 {{ end }}
 {{ end }}
 
-{{ $averageheight := div (math.Sum $imageheights) ($imageheights | len)}}
-
-{{ range (shuffle $images) }}
-{{ $image := . }}
-
-{{ range (seq 4 | shuffle) }}
-{{ if eq . 1 }}{{ if le $col1height $col2height $col3height $col4height}}
-{{ $col1 = $col1 | append $image }}
-{{ if ne $image.MediaType.SubType "svg" }}{{ $col1height = add $col1height $image.Height }}{{ else }}{{$col1height = add
-$col1height (mul $averageheight 2)}}{{ end }}{{ break }}
-{{end}}{{ end }}
-{{ if eq . 2 }}{{ if le $col2height $col1height $col3height $col4height}}
-{{ $col2 = $col2 | append $image }}
-{{ if ne $image.MediaType.SubType "svg" }}{{ $col2height = add $col2height $image.Height }}{{ else }}{{$col2height = add
-$col2height (mul $averageheight 2)}}{{ end }}{{ break }}
-{{end}}{{ end }}
-{{ if eq . 3 }}{{ if le $col3height $col1height $col2height $col4height}}
-{{ $col3 = $col3 | append $image }}
-{{ if ne $image.MediaType.SubType "svg" }}{{ $col3height = add $col3height $image.Height }}{{ else }}{{$col3height = add
-$col3height (mul $averageheight 2)}}{{ end }}{{ break }}
-{{end}}{{ end }}
-{{ if eq . 4 }}{{ if le $col4height $col1height $col2height $col3height}}
-{{ $col4 = $col4 | append $image }}
-{{ if ne $image.MediaType.SubType "svg" }}{{ $col4height = add $col4height $image.Height }}{{ else }}{{$col4height = add
-$col4height (mul $averageheight 2)}}{{ end }}{{ break }}
-{{end}}{{ end }}
-{{ end }}
-
-{{ end }}
+{{ $shuffledImages := partial "tools/shuffle.html" $shuffledImages }}
 
 <div class="gallery">
-  <div class="column">
-    {{ range $col1 }}
-    <div class="image-container filterElement tagAll tag{{ index $typemap .RelPermalink }}">
-      <img src="{{ .RelPermalink }}" onclick="this.requestFullscreen()">
-    </div>
-    {{ end }}
+  {{ range $shuffledImages }}
+  <div class="image-container filterElement tagAll tag{{ .type }}">
+    <img class="modal-target" src="{{ .image.RelPermalink }}">
   </div>
-  <div class="column">
-    {{ range $col2 }}
-    <div class="image-container filterElement tagAll tag{{ index $typemap .RelPermalink }}">
-      <img src="{{ .RelPermalink }}" onclick="this.requestFullscreen()">
-    </div>
-    {{ end }}
-  </div>
-  <div class="column">
-    {{ range $col3 }}
-    <div class="image-container filterElement tagAll tag{{ index $typemap .RelPermalink }}">
-      <img src="{{ .RelPermalink }}" onclick="this.requestFullscreen()">
-    </div>
-    {{ end }}
-  </div>
-  <div class="column">
-    {{ range $col4 }}
-    <div class="image-container filterElement tagAll tag{{ index $typemap .RelPermalink }}">
-      <img src="{{ .RelPermalink }}" onclick="this.requestFullscreen()">
-    </div>
-    {{ end }}
-  </div>
+  {{ end }}
+</div>
+
+<div id="modal" class="modal">
+  <span id="modal-close" class="modal-close">&times;</span>
+  <img id="modal-content" class="modal-content">
+  <div id="modal-caption" class="modal-caption"></div>
 </div>
 
 {{ if .IsSection }}
 {{ partial "lists/filter.html" (dict "context" . "tags" $typemap) }}
 {{ end }}
+
+<script>
+  // Modal Setup
+  var modal = document.getElementById('modal');
+
+  var modalClose = document.getElementById('modal-close');
+  modalClose.addEventListener('click', function () {
+    modal.style.display = "none";
+  });
+
+  // global handler
+  document.addEventListener('click', function (e) {
+    if (e.target.className.indexOf('modal-target') !== -1) {
+      var img = e.target;
+      var modalImg = document.getElementById("modal-content");
+      var captionText = document.getElementById("modal-caption");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      captionText.innerHTML = img.alt;
+    }
+  });
+</script>

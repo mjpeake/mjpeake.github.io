@@ -16,7 +16,13 @@
 .filterBtn {
 	background-color: var(--bgcolor);
 	padding: 2px 8px 2px 8px;
-	border-radius: 15px;
+	border-radius: 8px;
+	border-width: .125rem;
+
+	font-family: var(--text-font);
+	font-weight: 500;
+
+	cursor: pointer;
 
 	width: auto;
 	white-space: nowrap;
