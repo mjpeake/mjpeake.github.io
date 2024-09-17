@@ -9,7 +9,7 @@ language-icon = 'fa-java'
 tags=["Java","Games"]
 +++
 
-An unbeatable game of Tic Tac Toe using the Minimax Algorithm
+An unbeatable game of Tic Tac Toe using a minimax algorithm.
 
 ## Features
 - Player vs AI Gameplay

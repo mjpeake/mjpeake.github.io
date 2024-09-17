@@ -27,20 +27,28 @@
 
 .filterBtn {
 	background-color: var(--bgcolor);
-	padding: 2px 8px 2px 8px;
+	padding: 2px 6px 2px 6px;
 	border-radius: 8px;
 	border-width: .125rem;
 
 	font-family: var(--text-font);
+	font-size: 1rem;
 	font-weight: 500;
 
 	cursor: pointer;
-
-	width: auto;
 	white-space: nowrap;
+
+	/* Not selectable */
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 
 	&::-webkit-scrollbar {
 		display: none;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 0.75rem;
 	}
 }
 

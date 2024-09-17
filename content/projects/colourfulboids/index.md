@@ -5,7 +5,7 @@ date = 2023-01-15T09:00:00-07:00
 draft = false
 github = 'https://github.com/mjpeake/colourfulboids'
 language-icon = 'fa-js'
-tags=["Javascript","GenerativeArt","Boids"]
+tags=["Javascript","GenArt","Boids"]
 
 [[script]]
   src = "https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.0/dist/colourfulboids.js"
