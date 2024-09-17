@@ -5,6 +5,18 @@
 
     width: 70vw;
     margin: 0 auto 0 auto;
+
+    @media (max-width: 768px) {
+        margin: 0.25rem auto 0.25rem auto;
+        width: calc(100vw - var(--pad-y-md)*2);
+        row-gap: 2vh;
+    }
+
+    @media (min-width: 768px) and (max-width: 1200px) {
+        margin: 0.5rem auto 0.5rem auto;
+        width: calc(100vw - var(--pad-y-lg)*2);
+        row-gap: 2vh;
+    }
 }
 
 .title-icon {
@@ -12,6 +24,10 @@
     text-decoration: none;
     color: var(--accent);
     padding-left: 0.75rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.5rem;
+    }
 }
 
 .title-icon-link {
@@ -43,16 +59,22 @@
     svg {
         width: 1em;
         height: 1em;
+        stroke-width: 10%;
     }
 
     &:hover,
     &:focus {
         opacity: .75;
     }
+
+    @media (max-width: 768px) {
+        padding: 0.4rem;
+        font-size: 1rem;
+    }
 }
 
 .project-showcase {
-    border-color: var(--accent);
+    border: 0.3rem solid var(--accent);
     border-radius: 12px;
     overflow: hidden;
 
@@ -71,7 +93,7 @@
 
 .project-showcase-image {
     background-color: var(--accent);
-    padding: 0.5rem;
+    padding: 0.2em;
 
     img {
         border-radius: 12px;
@@ -81,6 +103,14 @@
         object-fit: contain;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+        padding: 0rem;
+    }
+
+    @media (min-width: 768px) and (max-width: 1200px) {
+        padding: 0.2rem;
     }
 }
 
@@ -103,10 +133,9 @@
 
 #fullscreen-exit.fullscreen {
     position: fixed;
-
     z-index: 9999;
     top: 3vh;
-    left: 3vh;
+    right: 3vh;
 
     padding: 0.75rem;
 
@@ -122,18 +151,21 @@
     transition: .25s ease;
     opacity: 75%;
 
+    width: 2rem;
+    height: 2rem;
+
     cursor: pointer;
     color: var(--accent);
     text-decoration: none;
 
-    svg {
-        width: 1em;
-        height: 1em;
-    }
-
     &:hover,
     &:focus {
         opacity: 100%;
+    }
+
+    @media (max-width: 768px) {
+        padding: 0.5rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -158,9 +190,9 @@
 
     overflow: hidden;
     height: 100%;
+    border: 0.3rem solid var(--accent);
     border-radius: 12px;
     border-style: solid;
-    border-color: var(--accent);
     font-size: 1.2em;
 }
 
@@ -170,55 +202,52 @@
     grid-template-columns: auto 1fr;
     column-gap: .5rem;
 
-    padding: 1% 2% 1% 2%;
-    background-color: var(--accent);
-    color: var(--bgcolor);
+    padding: 1% 2% 0% 2%;
+    background-color: var(--bgcolor);
+    color: var(--accent);
 
     h2 {
         margin: 0;
-        color: var(--bgcolor);
-        font-size: 1.25rem;
+        color: var(--accent);
+        font-size: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        column-gap: 0.25rem;
+        padding: 2% 2% 1% 2%;
+
+        h2 {
+            font-size: 1.5rem;
+        }
     }
 }
 
 .project-box-header-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
     margin: auto 0 auto 0;
+
+    @media (max-width: 768px) {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
 }
 
 .project-box-content {
     padding: 1% 2% 1% 2%;
     height: 100%;
     font-size: 1vw;
-}
 
-div.highlight {
-    max-width: 100%;
-}
+    img {
+        max-width: 100%;
+    }
 
-div.highlight pre {
-    white-space: pre-wrap;
-    word-break: break-word;
-}
+    @media (max-width: 768px) {
+        font-size: 3.5vw;
+    }
 
-.btn {
-    background-color: var(--accent);
-    color: var(--bgcolor);
-
-    border-radius: 5px;
-    cursor: pointer;
-
-    font-size: 1rem;
-    margin: auto 0 auto 0;
-
-    overflow: hidden;
-    padding: 5px 10px 5px;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-        opacity: .75;
+    @media (min-width: 768px) and (max-width: 1200px) {
+        font-size: 2.5vw;
     }
 }
 
@@ -251,178 +280,8 @@ div.highlight pre {
     }
 }
 
-
-
-
 .gallery {
-    overflow: hidden;
-
-    animation: fadeInAnimation ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    columns: 4 10rem;
-    column-gap: 1rem;
-    @for $i from 1 through 36 { 
-      div:nth-child(#{$i}) {
-        $h: (random(400) + 100) + px;
-        height: $h;
-        line-height: $h;
-      }
-    }
-}
-
-.image-container {
-    margin-bottom: 8px;
-    overflow: hidden;
-}
-
-.image-container img {
-    width: 100%;
-    display: block;
-    transition: transform .4s;
-    cursor: pointer;
-}
-
-.image-container img:hover {
-    transform: scale(1.2);
-    transform-origin: 50% 50%;
-}
-
-
-  /* The Modal (background) */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  /* Modal Content (image) */
-  .modal-content {
-    margin: auto;
-    display: block;
-    width: auto;
-    height: auto;
-    opacity: 1 !important;
-    max-width: 80vw;
-    max-height: 80vh;
-  }
-  
-  /* Caption of Modal Image */
-  .modal-caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 1200px;
-    text-align: center;
-    color: white;
-    font-weight: 700;
-    font-size: 1em;
-    margin-top: 32px;
-  }
-  
-  /* Add Animation */
-  .modal-content, .modal-caption {  
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-  }
-  
-  @-webkit-keyframes zoom {
-    from {-webkit-atransform:scale(0)} 
-    to {-webkit-transform:scale(1)}
-  }
-  
-  @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
-  }
-  
-  /* The Close Button */
-  .modal-close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  .modal-close:hover,
-  .modal-close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-
-
-
-
-
-
-
-@media (max-width: 768px) {
-    .project-showcase-body {
-        margin: 0.25rem auto 0.25rem auto;
-        width: 90vw;
-        row-gap: 2vh;
-    }
-
-    .project-box-content {
-        font-size: 2vw;
-    }
-
-    .column {
-        flex: 100%;
-        max-width: 100%;
-    }
-
-    .back-button {
-        padding: 0.4rem;
-        font-size: 1rem;
-    }
-
-    .title-icon {
-        font-size: 1.5rem;
-    }
-
-    #fullscreen-exit.fullscreen {
-        padding: 0.5rem;
-        font-size: 1.5rem;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1200px) {
-    .project-showcase-body {
-        margin: 0.5rem auto 0.5rem auto;
-        width: calc(100vw - 12rem);
-        row-gap: 2vh;
-    }
-
-    .project-box-content {
-        font-size: 1.5vw;
-    }
-
-    .column {
-        flex: calc((100% / 2) - (4px * 2));
-        max-width: calc((100% / 2) - (4px * 2));
-    }
+    padding: 0 !important;
+    column-count: 4 !important;
+    column-width: 10rem !important;
 }
