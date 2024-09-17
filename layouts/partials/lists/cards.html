@@ -3,9 +3,9 @@
   <article class="card filterElement tagAll {{ range .Params.Tags }}tag{{ . }} {{ end }}">
     {{ $image := .Resources.GetMatch "thumbnail.png" }}
     {{ with $image }}
-    <figure class="card-image">
+    <div class="card-image">
       <img src="{{ .RelPermalink }}" alt="An image showcasing the {{ .Title }} project in action." />
-    </figure>
+    </div>
     {{ end }}
     <div class="card-header">
       <h2 href="#">{{ .Title }}</h2>

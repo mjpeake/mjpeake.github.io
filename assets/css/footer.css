@@ -1,3 +1,21 @@
+footer {
+    grid-area: footer;
+    background-color: var(--bgcolor);
+
+    padding: 0 var(--pad-y-xxl) 0 var(--pad-y-xxl);
+
+    margin-top: auto;
+    margin-bottom: auto;
+
+    @media (max-width: 768px) {
+        padding: 0 var(--pad-y-md) 0 var(--pad-y-md);
+    }
+
+    @media (min-width: 768px) and (max-width: 1200px) {
+        padding: 0 var(--pad-y-lg) 0 var(--pad-y-lg);
+    }
+}
+
 .footer {
     width: auto;
     height: auto;
@@ -19,6 +37,10 @@
     display: grid;
     grid-auto-flow: column;
     column-gap: 1rem;
+
+    @media (max-width: 768px) {
+        column-gap: 0.75rem;
+    }
 }
 
 .icon {
@@ -26,13 +48,8 @@
     font-size: 1.25em;
     font-family: 'Font Awesome 5 Brands';
     text-decoration: none;
-}
 
-@media (max-width: 576px) {
-    .icons {
-        column-gap: 0.75rem;
-    }
-    .icon {
+    @media (max-width: 768px) {
         font-size: 1em;
     }
 }

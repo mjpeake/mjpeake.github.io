@@ -14,13 +14,18 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
     width: min-content;
-    
+
     img {
         display: block;
         width: 3rem;
         pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+        img {
+            width: 2rem;
+        }
     }
 }
 
@@ -33,26 +38,18 @@
 .navmenu-text {
     font-size: 1.75rem;
     font-family: var(--main-font);
-    color: var(--textcolor);
+    color: var(--accent);
     text-decoration: none;
     background-color: transparent;
     border-bottom: 4px solid transparent;
+
+    @media (max-width: 768px) {
+        font-size: 1.25rem;
+    }
 }
 
 .navmenu-text:hover {
     text-decoration: none;
     color: var(--textcolor);
     border-bottom: 4px solid black;
-}
-
-@media (max-width: 575px) {
-    .navmenu-text {
-        font-size: 1rem;
-    }
-}
-
-@media (min-width: 576px) and (max-width: 767px) {
-    .navmenu-text {
-        font-size: 1.25rem;
-    }
 }

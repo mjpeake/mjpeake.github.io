@@ -11,6 +11,18 @@
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+
+	@media (max-width: 768px) {
+		grid-area: 2;
+		grid-column: 1 / span 2;
+		padding-top: 0.5rem;
+	}
+
+	@media (min-width: 768px) and (max-width: 1200px) {
+		grid-area: 2;
+		grid-column: 1 / span 2;
+		padding-top: 0.5rem;
+	}
 }
 
 .filterBtn {
@@ -50,24 +62,3 @@
 .filterElement {
 	display: none;
 }
-
-
-
-
-@media (max-width: 768px) {
-	.filterBtns {
-		grid-area: 2;
-		grid-column: 1 / span 2;
-
-		padding-top: 0.5rem;
-	}
-  }
-  
-  @media (min-width: 768px) and (max-width: 1200px) {
-	.filterBtns {
-		grid-area: 2;
-		grid-column: 1 / span 2;
-
-		padding-top: 0.5rem;
-	}
-  }
