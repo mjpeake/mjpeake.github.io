@@ -52,9 +52,8 @@
 	}
 }
 
-/* Add a light grey background on mouse-over */
-.filterBtn:hover {
-	background-color: var(--bgcolor-off);
+.filterBtn:hover:not(.filterBtn.active) {
+	filter: brightness(90%);
 }
 
 /* Add a dark background to the active button */
