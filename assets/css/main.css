@@ -1,8 +1,8 @@
 :root {
-  --bgcolor: #f4f4f4;
-  --bgcolor-off: #FAF9F6;
-  --accent: #313131;
-  --textcolor: #313131;
+  --bgcolor: #F4F3F2;
+  --bgcolor-off: #EBEBEB;
+  --accent: #221e20;
+  --textcolor: #221e20;
 
   --pad-y-md: 5vw;
   --pad-y-lg: 10vw;

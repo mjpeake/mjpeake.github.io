@@ -2,10 +2,6 @@
 	overflow: hidden;
 	padding: 1rem var(--pad-y-xl) 1rem var(--pad-y-xl);
 
-	animation: fadeInAnimation ease 2s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
@@ -46,14 +42,10 @@
 	position: relative;
 	transition: .15s ease-in;
 
-	border: 4px solid transparent;
-
-	background-color: white;
+	border: 4px solid var(--accent);
 
 	&:hover,
 	&:focus-within {
-		border: 4px solid var(--accent);
-
 		box-shadow: 0 0 0 2px #16C79A, 0 10px 60px 0 rgba(#000, .1);
 		transform: translatey(-5px);
 	}
@@ -90,15 +82,16 @@
 
 .card-header {
 	display: flex;
-	align-items: center;
+	align-items: start;
 	justify-content: space-between;
+	padding-bottom: 1rem;
 
 	h2 {
 		font-weight: 600;
-		font-size: 1.375rem;
-		line-height: 1.25;
+		font-size: 1.5rem;
 		text-decoration: none;
 		color: var(--accent);
+		margin: 0 1.25rem 0 0;
 
 		@media (max-width: 768px) {
 			font-size: 1.25rem;
@@ -116,7 +109,7 @@
 .card-meta {
 	display: flex;
 	align-items: center;
-	color: #787878;
+	opacity: .75;
 
 	&:first-child:after {
 		display: block;
@@ -129,6 +122,10 @@
 		margin-right: .75rem;
 	}
 
+	p {
+		margin: 0;
+	}
+
 	svg {
 		flex-shrink: 0;
 		width: 1em;
@@ -138,14 +135,14 @@
 }
 
 .language-icon {
-	font-size: 1.6rem;
+	font-size: 1.5rem;
 
 	@media (max-width: 768px) {
-		font-size: 1.35rem;
+		font-size: 1.25rem;
 	}
 
 	@media (min-width: 768px) and (max-width: 1200px) {
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 	}
 }
 
@@ -169,8 +166,10 @@
 }
 
 .tag {
-	background-color: var(--bgcolor-off);
-	padding: 2px 8px 2px 8px;
+	filter: brightness(97%);
+	color: var(--accent);
+	background-color: var(--bgcolor);
+	padding: 2px 6px 2px 6px;
 	border-radius: 8px;
 
 	width: auto;
@@ -215,43 +214,40 @@
 .icon-button {
 	display: flex;
 
-	border: 0;
-	background-color: var(--bgcolor-off);
+	color: var(--bgcolor);
+	background-color: var(--accent);
+
 	border-radius: 50%;
-	width: 2.5rem;
-	height: 2.5rem;
+	aspect-ratio: 1 / 1;
+	padding: 0.5rem;
+
+	font-size: 1rem;
+	transition: .25s ease;
 
 	justify-content: center;
 	align-items: center;
 	flex-shrink: 0;
-	font-size: 1.25rem;
-	transition: .25s ease;
 
 	z-index: 1;
 	cursor: pointer;
-	color: #565656;
 	text-decoration: none;
 
 	svg {
 		width: 1em;
 		height: 1em;
+		stroke-width: 10%;
 	}
 
 	&:hover,
 	&:focus {
-		background-color: var(--accent);
-		color: var(--bgcolor);
+		opacity: .75;
 	}
 
 	@media (max-width: 768px) {
-		width: 2rem;
-		height: 2rem;
-		font-size: 1rem;
+		font-size: 0.8rem;
 	}
 
 	@media (min-width: 768px) and (max-width: 1200px) {
-		width: 2.25rem;
-		height: 2.25rem;
-		font-size: 1rem;
+		font-size: 0.9rem;
 	}
 }
