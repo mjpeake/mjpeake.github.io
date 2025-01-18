@@ -1,6 +1,10 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
+<link rel="stylesheet" href="/fontawesome/css/all.css">
 
-{{- with resources.Get "css/header.css" }}
+<link rel="stylesheet" href="/fonts/kollektif/stylesheet.css">
+<link rel="stylesheet" href="/fonts/kollektif-bold/stylesheet.css">
+<link rel="stylesheet" href="/fonts/gidole/stylesheet.css">
+
+{{- with resources.Get "css/header.css" | minify | fingerprint }}
   {{- if eq hugo.Environment "development" }}
     <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{- else }}
@@ -10,7 +14,7 @@
   {{- end }}
 {{- end }}
 
-{{- with resources.Get "css/main.css" }}
+{{- with resources.Get "css/main.css" | minify | fingerprint }}
   {{- if eq hugo.Environment "development" }}
     <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{- else }}
@@ -20,7 +24,7 @@
   {{- end }}
 {{- end }}
 
-{{- with resources.Get "css/footer.css" }}
+{{- with resources.Get "css/footer.css" | minify | fingerprint }}
   {{- if eq hugo.Environment "development" }}
     <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{- else }}
@@ -31,7 +35,7 @@
 {{- end }}
 
 {{ if .IsHome }}
-  {{- with resources.Get "css/home.css" }}
+  {{- with resources.Get "css/home.css" | minify | fingerprint }}
     {{- if eq hugo.Environment "development" }}
       <link rel="stylesheet" href="{{ .RelPermalink }}">
     {{- else }}
@@ -43,7 +47,7 @@
 {{ end }}
 
 {{ if .IsSection }}
-  {{- with resources.Get "css/list/list.css" }}
+  {{- with resources.Get "css/list/list.css" | minify | fingerprint }}
     {{- if eq hugo.Environment "development" }}
       <link rel="stylesheet" href="{{ .RelPermalink }}">
     {{- else }}
@@ -54,7 +58,7 @@
   {{- end }}
 
   {{ if eq .Params.page_type "cards"}}
-    {{- with resources.Get "css/list/cards.css" }}
+    {{- with resources.Get "css/list/cards.css" | minify | fingerprint }}
       {{- if eq hugo.Environment "development" }}
         <link rel="stylesheet" href="{{ .RelPermalink }}">
       {{- else }}
@@ -64,7 +68,7 @@
       {{- end }}
     {{- end }}
   {{ else if eq .Params.page_type "gallery"}}
-    {{- with resources.Get "css/list/gallery.css" }}
+    {{- with resources.Get "css/list/gallery.css" | minify | fingerprint }}
       {{- if eq hugo.Environment "development" }}
         <link rel="stylesheet" href="{{ .RelPermalink }}">
       {{- else }}

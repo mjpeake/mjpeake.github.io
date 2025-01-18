@@ -2,6 +2,10 @@
 	overflow: hidden;
 	padding: 1rem var(--pad-y-xl) 1rem var(--pad-y-xl);
 
+	animation: fadeInAnimation ease 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
