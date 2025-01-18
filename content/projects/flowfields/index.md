@@ -5,7 +5,7 @@ date = 2023-01-15T09:00:00-07:00
 draft = false
 github = 'https://github.com/mjpeake/flowfields'
 language-icon = 'fa-js'
-tags=["Javascript","GenArt"]
+tags=["Javascript","Art"]
 
 [[script]]
   src = "https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"

@@ -1,7 +1,7 @@
 <div class="card-list">
   {{ range .Pages }}
   <article class="card filterElement tagAll {{ range .Params.Tags }}tag{{ . }} {{ end }}">
-    {{ $image := .Resources.GetMatch "thumbnail.png" }}
+    {{ $image := .Resources.GetMatch "thumbnail.webp" }}
     {{ with $image }}
     <div class="card-image">
       <img src="{{ .RelPermalink }}" alt="An image showcasing the {{ .Title }} project in action." />
