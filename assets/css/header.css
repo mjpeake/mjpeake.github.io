@@ -1,3 +1,21 @@
+header {
+    grid-area: header;
+
+    background-color: var(--bgcolor);
+    padding: var(--pad-header-x) var(--pad-y-xxl) var(--pad-header-x) var(--pad-y-xxl);
+
+    margin-top: auto;
+    margin-bottom: auto;
+
+    @media (max-width: 768px) {
+        padding: var(--pad-header-x) var(--pad-y-md) var(--pad-header-x) var(--pad-y-md);
+    }
+
+    @media (min-width: 768px) and (max-width: 1200px) {
+        padding: var(--pad-header-x) var(--pad-y-lg) var(--pad-header-x) var(--pad-y-lg);
+    }
+}
+
 .navbar {
     display: grid;
     grid-template-columns: 1fr auto;
