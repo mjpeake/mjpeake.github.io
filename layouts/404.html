@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}"
+    dir="{{ or site.Language.LanguageDirection `ltr` }}">
+
+<head>
+    {{ partial "head/head.html" . }}
+</head>
+
+<body>
+    <main>
+        <div class="body-404">
+            {{ $logo := resources.Get "images/logo.svg" }}
+            <div class="logo-404"><a href="{{ .Site.BaseURL }}"><img src="{{ $logo.RelPermalink }}" alt="Logo"></a></div>
+            <div class="text-404">404</div>
+            <div class="subtext-404">PAGE NOT FOUND</div>
+        </div>
+    </main>
+</body>
+
+</html>
