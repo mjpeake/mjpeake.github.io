@@ -69,6 +69,7 @@
 
 .card-image {
 	border-radius: 7px;
+	aspect-ratio: 16 / 9;
 	overflow: hidden;
 
 	margin-bottom: 1rem;
