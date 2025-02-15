@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.5">
+<meta name="description" content="Matt Peake - Software Engineer | Passionate about coding and problem-solving. Discover my journey in software development and explore projects showcasing my skills.">
+<meta name="keywords" content="Software Engineer, Web Development, Programming Languages, Problem-solving, Software Architecture, Code, Projects, Portfolio, Innovation, Collaboration, Digital Solutions, Technology, Coding, Software Development, Graduated Developer, Aspiring Developer, Skills, Expertise, Solutions, Empowering Businesses"/>
+<title>Colourful Boids | mattpeake</title>
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="/fontawesome/css/all.css">
+
+<link rel="stylesheet" href="/fonts/kollektif/stylesheet.css">
+<link rel="stylesheet" href="/fonts/kollektif-bold/stylesheet.css">
+<link rel="stylesheet" href="/fonts/gidole/stylesheet.css">
+    <link rel="stylesheet" href="/css/header.min.64b6aaf658037216244dd38b7cc07b71ab6a850f6c1a53080ca85942bc6976d2.css">
+    <link rel="stylesheet" href="/css/main.min.4cb7ca3448b10371e51ec02dfa5bce5dc8c0dab705efd778c7b9ac3d2c80505b.css">
+    <link rel="stylesheet" href="/css/footer.min.05be804f8f7cd2eb300d8f2869c2ce3b5ba351508ed106a48af05150115596f0.css">
+
+
+
+
+
+
+  
+        <link rel="stylesheet" href="/css/single/project.css">
+        <link rel="stylesheet" href="/css/list/gallery.css">
+  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.0/dist/colourfulboids.js"></script>
+  
+
+
+
+  
+  
+    <script src="/js/projects/colourfulboids.js" defer></script>
+  
+
+
+</head>
+<body>
+  <header>
+    <div class="navbar">
+    
+    <div class="logo"><a href="http://localhost:1313/"><img src="/images/logo.svg" alt="Logo"></a></div>
+
+    <div class="navmenu">
+        
+        <a href='/gallery' class='navmenu-text' role='button'>gallery</a>
+        
+        <a href='/projects' class='navmenu-text' role='button'>projects</a>
+        
+    </div>
+</div>
+  </header>
+  <main>
+    
+<div class="page-title-bar">
+  <a class="back-button" href="/projects/">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+      class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+    </svg>
+  </a>
+  <div class="page-title">
+    <h1>Colourful Boids</h1>
+  </div>
+
+  <a href='https://github.com/mjpeake/colourfulboids' class="title-icon-link"><i class='fab fa-github title-icon'></i></a>
+  <i class='fab fa-js title-icon'></i>
+</div>
+
+<div class="overflow">
+  <div class='project-showcase-body'>
+    <div class="project-showcase">
+        
+        <div class='project-showcase-canvas' id="showcase"></div>
+        <div class='project-showcase-options'>
+            <div class="option-button" onClick='location.reload();'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                </svg>
+            </div>
+            <div class="option-button" id="fullscreen-button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                </svg>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    
+    <div class='project-box'>
+        <div class="project-box-content">
+            <p>This JavaScript project simulates a flock of colorful boids moving around a canvas. The boids exhibit flocking behavior, including alignment, cohesion, and separation. Each boid is represented by a series of colored dots forming its body.</p>
+<h2 id="installation">Installation</h2>
+<p>You can install Colourful Boids via npm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm i @mjpeake/colourfulboids
+</span></span></code></pre></div><p>Alternatively, you can also use the following script tag reference:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.0/dist/colourfulboids.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><h2 id="parameters">Parameters</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ColourfulBoids</span>(<span style="color:#a6e22e">parentElement</span>, <span style="color:#a6e22e">boidColor</span>, <span style="color:#a6e22e">backgroundColor</span>);
+</span></span></code></pre></div><ul>
+<li><code>parentElement</code>: The HTML element where the Boids canvas will be appended.</li>
+<li><code>boidColor</code>: Optional. The color of the Boids in hexadecimal notation. If not provided, a random palette will be used.</li>
+<li><code>backgroundColor</code>: Optional. The background color of the canvas in hexadecimal notation. If not provided, a random palette will be used.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>To use Colourful Boids in your project, include the library in your HTML file and initialize it with the appropriate parameters. Here&rsquo;s an example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>  &lt;<span style="color:#f92672">title</span>&gt;Colourful Boids&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>  &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;assets/style.css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.0/dist/colourfulboids.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  &lt;<span style="color:#f92672">script</span>&gt; <span style="color:#a6e22e">ColourfulBoids</span>(<span style="color:#e6db74">&#34;boids&#34;</span>) &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;boids&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>&lt;/<span style="color:#f92672">htmL</span>&gt;
+</span></span></code></pre></div><p>This example initializes a Colourful Boids visualization without defining any specific colours to be used, as a result the sketch will randomly select two contrasting colours.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Flocking Behavior</strong>: The boids exhibit realistic flocking behavior, including alignment, cohesion, and separation.</li>
+<li><strong>Colorful Visualization</strong>: Each boid is represented by a series of colored dots forming its body, creating an aesthetically pleasing visualization.</li>
+<li><strong>Dynamic Population</strong>: The population size of the flock adjusts based on the size of the canvas and the internally-specified population density.</li>
+</ul>
+<h2 id="credits">Credits</h2>
+<p>This project was inspired by Craig Reynolds&rsquo; classic <a href="https://www.red3d.com/cwr/boids/">boids</a> algorithm for simulating flocking behavior.</p>
+<h2 id="license">License</h2>
+<p>This project is licensed under the MIT License - see the <a href="https://github.com/mjpeake/colourfulboids/blob/master/LICENSE">LICENSE</a> file for details.</p>
+
+        </div>
+    </div>
+    
+
+    
+    <div class='project-box'>
+        <div class="project-box-header">
+            <div class="project-box-header-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd"
+                        d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+            <h2>Gallery</h2>
+        </div>
+        <div class="project-box-content">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="gallery">
+  
+  <div class="image-container filterElement tagAll tag">
+    <img class="image-fullscreen-target" src="/images/gallery/colourfulboids/colourfulboids-1.webp">
+  </div>
+  
+  <div class="image-container filterElement tagAll tag">
+    <img class="image-fullscreen-target" src="/images/gallery/colourfulboids/colourfulboids-3.webp">
+  </div>
+  
+  <div class="image-container filterElement tagAll tag">
+    <img class="image-fullscreen-target" src="/images/gallery/colourfulboids/colourfulboids-2.webp">
+  </div>
+  
+  <div class="image-container filterElement tagAll tag">
+    <img class="image-fullscreen-target" src="/images/gallery/colourfulboids/colourfulboids-4.webp">
+  </div>
+  
+</div>
+
+<div id="image-fullscreen" class="image-fullscreen">
+  <button id="image-fullscreen-exit" class="image-fullscreen-exit">&times;</button>
+  <img id="image-fullscreen-content" class="image-fullscreen-content">
+</div>
+
+
+
+<script>
+  
+  var modal = document.getElementById('image-fullscreen');
+
+  var modalClose = document.getElementById('image-fullscreen-exit');
+  modalClose.addEventListener('click', function () {
+    modal.style.display = "none";
+  });
+
+  
+  document.addEventListener('click', function (e) {
+  
+  if (e.target.classList.contains('image-fullscreen-target')) {
+    var img = e.target;
+    var modalImg = document.getElementById("image-fullscreen-content");
+    modal.style.display = "block"; 
+    modalImg.src = img.src; 
+  }
+});
+</script>
+        </div>
+    </div>
+    
+</div>
+
+<button id="fullscreen-exit" aria-label="exit">&times;</button>
+<script>
+    $('#fullscreen-button').click(function (e) {
+        $('#showcase').toggleClass('fullscreen');
+        $('#fullscreen-exit').toggleClass('fullscreen');
+        $('canvas').toggleClass('fullscreen');
+        window.dispatchEvent(new Event('resize'));
+    });
+
+    $('#fullscreen-exit').click(function (e) {
+        $('#showcase').toggleClass('fullscreen');
+        $('#fullscreen-exit').toggleClass('fullscreen');
+        $('canvas').toggleClass('fullscreen');
+        window.dispatchEvent(new Event('resize'));
+    });
+</script>
+</div>
+
+  </main>
+  <footer>
+    <div class="footer">
+    <div class="icons">
+        <a href="https://twitter.com/mjpeake" aria-label="Twitter" class="icon fa-twitter"></a>
+        <a href="https://www.linkedin.com/in/mjpeake/" aria-label="LinkedIn" class="icon fa-linkedin"></a>
+        <a href="https://www.hackerrank.com/mattpeake" aria-label="HackerRank" class="icon fa-hackerrank"></a>
+        <a href="https://github.com/mjpeake" aria-label="GitHub" class="icon fa-github"></a>
+    </div>
+    <hr class="line">
+</div>
+  </footer>
+</body>
+</html>

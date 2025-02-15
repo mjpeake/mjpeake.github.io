@@ -41,11 +41,12 @@
 
   // global handler
   document.addEventListener('click', function (e) {
-    if (e.target.className.indexOf('image-fullscreen-target') !== -1) {
-      var img = e.target;
-      var modalImg = document.getElementById("image-fullscreen-content");
-      modal.style.display = "block";
-      modalImg.src = img.src;
-    }
-  });
+  // Check if the clicked element has the class 'image-fullscreen-target'
+  if (e.target.classList.contains('image-fullscreen-target')) {
+    var img = e.target;
+    var modalImg = document.getElementById("image-fullscreen-content");
+    modal.style.display = "block"; // Show the modal
+    modalImg.src = img.src; // Set the modal image source to the clicked image's source
+  }
+});
 </script>

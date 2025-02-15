@@ -1,0 +1,11 @@
+@font-face{
+    font-family: "Kollektif Bold";
+    src: url("5f221a77fe528442afaf7655d42ef98c.eot");
+    src: url("5f221a77fe528442afaf7655d42ef98c.eot?#iefix")format("embedded-opentype"),
+        url("5f221a77fe528442afaf7655d42ef98c.woff")format("woff"),
+        url("5f221a77fe528442afaf7655d42ef98c.woff2")format("woff2"),
+        url("5f221a77fe528442afaf7655d42ef98c.ttf")format("truetype"),
+        url("5f221a77fe528442afaf7655d42ef98c.svg#Kollektif Bold")format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
