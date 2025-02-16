@@ -1,24 +1,24 @@
-{{ $typemap := dict }}
-{{ $shuffledImages := slice }}
+{{- $typemap := dict }}
+{{- $shuffledImages := slice }}
 
-{{ range .Params.gallery }}
-{{ $type := .type }}
-{{ $images := resources.Match .location }}
+{{- range .Params.gallery }}
+{{- $type := .type }}
+{{- $images := resources.Match .location }}
 
-{{ range $images }}
-{{ $shuffledImages = $shuffledImages | append (dict "image" . "type" $type) }}
-{{ $typemap = merge $typemap (dict .RelPermalink $type) }}
-{{ end }}
-{{ end }}
+{{- range $images }}
+{{- $shuffledImages = $shuffledImages | append (dict "image" . "type" $type) }}
+{{- $typemap = merge $typemap (dict .RelPermalink $type) }}
+{{- end }}
+{{- end }}
 
-{{ $shuffledImages := partial "tools/shuffle.html" $shuffledImages }}
+{{- $shuffledImages := partial "tools/shuffle.html" $shuffledImages }}
 
 <div class="gallery">
-  {{ range $shuffledImages }}
+  {{- range $shuffledImages }}
   <div class="image-container filterElement tagAll tag{{ .type }}">
     <img class="image-fullscreen-target" src="{{ .image.RelPermalink }}">
   </div>
-  {{ end }}
+  {{- end }}
 </div>
 
 <div id="image-fullscreen" class="image-fullscreen">
@@ -26,23 +26,18 @@
   <img id="image-fullscreen-content" class="image-fullscreen-content">
 </div>
 
-{{ if .IsSection }}
+{{- if .IsSection }}
 {{ partial "lists/filter.html" (dict "context" . "tags" $typemap) }}
-{{ end }}
+{{- end }}
 
 <script>
-  // Modal Setup
   var modal = document.getElementById('image-fullscreen');
-
   var modalClose = document.getElementById('image-fullscreen-exit');
   modalClose.addEventListener('click', function () {
     modal.style.display = "none";
   });
-
-  // global handler
   document.addEventListener('click', function (e) {
-  // Check if the clicked element has the class 'image-fullscreen-target'
-  if (e.target.classList.contains('image-fullscreen-target')) {
+  if (e.target.classList.contains('image-fullscreen-target')) { // Check if the clicked element has the class 'image-fullscreen-target'
     var img = e.target;
     var modalImg = document.getElementById("image-fullscreen-content");
     modal.style.display = "block"; // Show the modal

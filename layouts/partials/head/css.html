@@ -1,104 +1,96 @@
-<link rel="stylesheet" href="/fontawesome/css/all.css">
-
-<link rel="stylesheet" href="/fonts/kollektif/stylesheet.css">
-<link rel="stylesheet" href="/fonts/kollektif-bold/stylesheet.css">
-<link rel="stylesheet" href="/fonts/gidole/stylesheet.css">
-
+  <link rel="stylesheet" href="/fontawesome/css/all.css">
+  <link rel="stylesheet" href="/fonts/kollektif/stylesheet.css">
+  <link rel="stylesheet" href="/fonts/kollektif-bold/stylesheet.css">
+  <link rel="stylesheet" href="/fonts/gidole/stylesheet.css">
 {{- with resources.Get "css/header.css" | minify | fingerprint }}
-  {{- if eq hugo.Environment "development" }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}">
-  {{- else }}
-    {{- with . | minify | fingerprint }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-    {{- end }}
-  {{- end }}
+{{- if eq hugo.Environment "development" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- else }}
+{{- with . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
 {{- end }}
-
+{{- end }}
+{{- end }}
 {{- with resources.Get "css/main.css" | minify | fingerprint }}
-  {{- if eq hugo.Environment "development" }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}">
-  {{- else }}
-    {{- with . | minify | fingerprint }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-    {{- end }}
-  {{- end }}
+{{- if eq hugo.Environment "development" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- else }}
+{{- with . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
 {{- end }}
-
+{{- end }}
+{{- end }}
 {{- with resources.Get "css/footer.css" | minify | fingerprint }}
-  {{- if eq hugo.Environment "development" }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}">
-  {{- else }}
-    {{- with . | minify | fingerprint }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-    {{- end }}
-  {{- end }}
+{{- if eq hugo.Environment "development" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- else }}
+{{- with . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
 {{- end }}
-
-{{ if .IsHome }}
-  {{- with resources.Get "css/home.css" | minify | fingerprint }}
-    {{- if eq hugo.Environment "development" }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}">
-    {{- else }}
-      {{- with . | minify | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-      {{- end }}
-    {{- end }}
-  {{- end }}
-{{ end }}
-
-{{ if .IsSection }}
-  {{- with resources.Get "css/list/list.css" | minify | fingerprint }}
-    {{- if eq hugo.Environment "development" }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}">
-    {{- else }}
-      {{- with . | minify | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-      {{- end }}
-    {{- end }}
-  {{- end }}
-
-  {{ if eq .Params.page_type "cards"}}
-    {{- with resources.Get "css/list/cards.css" | minify | fingerprint }}
-      {{- if eq hugo.Environment "development" }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}">
-      {{- else }}
-        {{- with . | minify | fingerprint }}
-          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-        {{- end }}
-      {{- end }}
-    {{- end }}
-  {{ else if eq .Params.page_type "gallery"}}
-    {{- with resources.Get "css/list/gallery.css" | minify | fingerprint }}
-      {{- if eq hugo.Environment "development" }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}">
-      {{- else }}
-        {{- with . | minify | fingerprint }}
-          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-        {{- end }}
-      {{- end }}
-    {{- end }}
-  {{ end }}
-{{ end }}
-
-{{ if .IsPage }}
-  {{ if eq .Params.page_type "project"}}
-    {{- with resources.Get "css/single/project.css" }}
-      {{- if eq hugo.Environment "development" }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}">
-      {{- else }}
-        {{- with . | minify | fingerprint }}
-          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-        {{- end }}
-      {{- end }}
-    {{- end }}
-    {{- with resources.Get "css/list/gallery.css" }}
-      {{- if eq hugo.Environment "development" }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}">
-      {{- else }}
-        {{- with . | minify | fingerprint }}
-          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-        {{- end }}
-      {{- end }}
-    {{- end }}
-  {{ end }}
-{{ end }}
+{{- end }}
+{{- end }}
+{{- if .IsHome }}
+{{- with resources.Get "css/home.css" | minify | fingerprint }}
+{{- if eq hugo.Environment "development" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- else }}
+{{- with . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- if .IsSection }}
+{{- with resources.Get "css/list/list.css" | minify | fingerprint }}
+{{- if eq hugo.Environment "development" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- else }}
+{{- with . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{- end }}
+{{- end }}
+{{- end }}
+{{- if eq .Params.page_type "cards"}}
+{{- with resources.Get "css/list/cards.css" | minify | fingerprint }}
+{{- if eq hugo.Environment "development" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- else }}
+{{- with . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{- end }}
+{{- end }}
+{{- end }}
+{{ else if eq .Params.page_type "gallery"}}
+{{- with resources.Get "css/list/gallery.css" | minify | fingerprint }}
+{{- if eq hugo.Environment "development" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- else }}
+{{- with . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- if .IsPage }}
+{{- if eq .Params.page_type "project"}}
+{{- with resources.Get "css/single/project.css" }}
+{{- if eq hugo.Environment "development" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- else }}
+{{- with . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{- end }}
+{{- end }}
+{{- end }}
+{{- with resources.Get "css/list/gallery.css" }}
+{{- if eq hugo.Environment "development" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- else }}
+{{- with . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}

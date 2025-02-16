@@ -1,6 +1,6 @@
 <div class='project-showcase-body'>
     <div class="project-showcase">
-        {{ if .Params.Adapter }}
+        {{- if .Params.Adapter }}
         <div class='project-showcase-canvas' id="showcase"></div>
         <div class='project-showcase-options'>
             <div class="option-button" onClick='location.reload();'>
@@ -18,23 +18,23 @@
                 </svg>
             </div>
         </div>
-        {{ end }}
-        {{ with .Resources.GetMatch .Params.ShowcaseImage }}
+        {{- end }}
+        {{- with .Resources.GetMatch .Params.ShowcaseImage }}
         <div class="project-showcase-image">
             <img src="data:{{ .MediaType.Type }};base64,{{ .Content | base64Encode }}">
         </div>
-        {{ end }}
+        {{- end }}
     </div>
 
-    {{ if .Content }}
+    {{- if .Content }}
     <div class='project-box'>
         <div class="project-box-content">
             {{ .Content }}
         </div>
     </div>
-    {{ end }}
+    {{- end }}
 
-    {{ if .Params.Gallery }}
+    {{- if .Params.Gallery }}
     <div class='project-box'>
         <div class="project-box-header">
             <div class="project-box-header-icon">
@@ -50,7 +50,7 @@
             {{ partial "lists/gallery.html" . }}
         </div>
     </div>
-    {{ end }}
+    {{- end }}
 </div>
 
 <button id="fullscreen-exit" aria-label="exit">&times;</button>
