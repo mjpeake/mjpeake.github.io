@@ -6,7 +6,7 @@ draft = false
 showcaseimage = 'showcase.webp'
 github = 'https://github.com/mjpeake/gameoflife'
 language-icon = 'fa-java'
-tags=["Java","Games"]
+filters=["Java","Games"]
 +++
 
 A remake of John Conway's Game of Life with added functionality.

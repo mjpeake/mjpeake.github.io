@@ -48,7 +48,7 @@
   </div>
 
   <div class="filterBtns" id="filterBtns" onWheel="this.scrollLeft+=event.deltaY>0?100:-100">
-    <button class="filterBtn active" onclick="filterSelection('tagAll')">Show All</button>
+    <button class="filterBtn active" onclick="filterSelection('filterAll')">Show All</button>
   </div>
 </div>
 
@@ -56,38 +56,38 @@
   
 
 <div class="gallery">
-  <div class="image-container filterElement tagAll tagBoids">
-    <img class="image-fullscreen-target" src="/images/gallery/colourfulboids/colourfulboids-1.webp">
-  </div>
-  <div class="image-container filterElement tagAll tagFlowFields">
-    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-2.webp">
-  </div>
-  <div class="image-container filterElement tagAll tagFlowFields">
-    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-5.webp">
-  </div>
-  <div class="image-container filterElement tagAll tagFlowFields">
-    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-3.webp">
-  </div>
-  <div class="image-container filterElement tagAll tagFlowFields">
-    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-6.webp">
-  </div>
-  <div class="image-container filterElement tagAll tagFlowFields">
-    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-7.webp">
-  </div>
-  <div class="image-container filterElement tagAll tagBoids">
-    <img class="image-fullscreen-target" src="/images/gallery/colourfulboids/colourfulboids-2.webp">
-  </div>
-  <div class="image-container filterElement tagAll tagFlowFields">
-    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-4.webp">
-  </div>
-  <div class="image-container filterElement tagAll tagBoids">
+  <div class="image-container filterElement filterAll filterBoids">
     <img class="image-fullscreen-target" src="/images/gallery/colourfulboids/colourfulboids-4.webp">
   </div>
-  <div class="image-container filterElement tagAll tagBoids">
+  <div class="image-container filterElement filterAll filterFlowFields">
+    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-1.webp">
+  </div>
+  <div class="image-container filterElement filterAll filterBoids">
+    <img class="image-fullscreen-target" src="/images/gallery/colourfulboids/colourfulboids-1.webp">
+  </div>
+  <div class="image-container filterElement filterAll filterFlowFields">
+    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-3.webp">
+  </div>
+  <div class="image-container filterElement filterAll filterFlowFields">
+    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-7.webp">
+  </div>
+  <div class="image-container filterElement filterAll filterFlowFields">
+    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-2.webp">
+  </div>
+  <div class="image-container filterElement filterAll filterBoids">
     <img class="image-fullscreen-target" src="/images/gallery/colourfulboids/colourfulboids-3.webp">
   </div>
-  <div class="image-container filterElement tagAll tagFlowFields">
-    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-1.webp">
+  <div class="image-container filterElement filterAll filterBoids">
+    <img class="image-fullscreen-target" src="/images/gallery/colourfulboids/colourfulboids-2.webp">
+  </div>
+  <div class="image-container filterElement filterAll filterFlowFields">
+    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-5.webp">
+  </div>
+  <div class="image-container filterElement filterAll filterFlowFields">
+    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-6.webp">
+  </div>
+  <div class="image-container filterElement filterAll filterFlowFields">
+    <img class="image-fullscreen-target" src="/images/gallery/flowfields/flowfields-4.webp">
   </div>
 </div>
 
@@ -96,12 +96,12 @@
   <img id="image-fullscreen-content" class="image-fullscreen-content">
 </div>
 <script>
-    var tags = ["Boids", "Boids", "Boids", "Boids", "FlowFields", "FlowFields", "FlowFields", "FlowFields", "FlowFields", "FlowFields", "FlowFields", ]
-    tags = [...new Set(tags)];
+    var filters = ["Boids", "Boids", "Boids", "Boids", "FlowFields", "FlowFields", "FlowFields", "FlowFields", "FlowFields", "FlowFields", "FlowFields", ]
+    filters = [...new Set(filters)];
     var div = document.getElementById('filterBtns');
-    for (let tag of tags) {
-        onClick = "filterSelection(\'tag" + tag + "\')"
-        div.innerHTML += '<button class="filterBtn" onclick=' + onClick + '>' + tag + '</button>'
+    for (let filter of filters) {
+        onClick = "filterSelection(\'filter" + filter + "\')"
+        div.innerHTML += '<button class="filterBtn" onclick=' + onClick + '>' + filter + '</button>'
     }
 </script>
 
@@ -121,7 +121,7 @@
             this.classList.add("active");
         });
     });
-    filterSelection("tagAll");
+    filterSelection("filterAll");
 </script>
 
 <script>

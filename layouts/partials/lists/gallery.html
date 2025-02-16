@@ -15,7 +15,7 @@
 
 <div class="gallery">
   {{- range $shuffledImages }}
-  <div class="image-container filterElement tagAll tag{{ .type }}">
+  <div class="image-container filterElement filterAll filter{{ .type }}">
     <img class="image-fullscreen-target" src="{{ .image.RelPermalink }}">
   </div>
   {{- end }}
@@ -27,7 +27,7 @@
 </div>
 
 {{- if .IsSection }}
-{{ partial "lists/filter.html" (dict "context" . "tags" $typemap) }}
+{{ partial "lists/filter.html" (dict "context" . "filters" $typemap) }}
 {{- end }}
 
 <script>

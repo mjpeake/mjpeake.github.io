@@ -1,10 +1,10 @@
 <script>
-    var tags = [{{ range .tags }}"{{ . }}", {{ end }}]
-    tags = [...new Set(tags)];
+    var filters = [{{ range .filters }}"{{ . }}", {{ end }}]
+    filters = [...new Set(filters)];
     var div = document.getElementById('filterBtns');
-    for (let tag of tags) {
-        onClick = "filterSelection(\'tag" + tag + "\')"
-        div.innerHTML += '<button class="filterBtn" onclick=' + onClick + '>' + tag + '</button>'
+    for (let filter of filters) {
+        onClick = "filterSelection(\'filter" + filter + "\')"
+        div.innerHTML += '<button class="filterBtn" onclick=' + onClick + '>' + filter + '</button>'
     }
 </script>
 
@@ -24,5 +24,5 @@
             this.classList.add("active");
         });
     });
-    filterSelection("tagAll");
+    filterSelection("filterAll");
 </script>
