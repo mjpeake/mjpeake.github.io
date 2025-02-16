@@ -2,6 +2,9 @@ baseURL = 'https://www.mattpeake.com/'
 languageCode = 'en-us'
 title = 'mattpeake'
 
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"] # you will get a console error message without this
+
 [menu]
 [[menu.main]]
   name = 'gallery'
