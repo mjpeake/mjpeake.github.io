@@ -151,7 +151,7 @@
 	}
 }
 
-.tags {
+.filters {
 	display: grid;
 	grid-auto-flow: column;
 	column-gap: 5px;
@@ -170,7 +170,7 @@
 	}
 }
 
-.tag {
+.filter {
 	filter: brightness(97%);
 	color: var(--accent);
 	background-color: var(--bgcolor);

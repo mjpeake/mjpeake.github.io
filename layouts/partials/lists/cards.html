@@ -1,6 +1,6 @@
 <div class="card-list">
   {{ range .Pages }}
-  <article class="card filterElement tagAll {{ range .Params.Tags }}tag{{ . }} {{ end }}">
+  <article class="card filterElement filterAll {{ range .Params.Filters }}filter{{ . }} {{ end }}">
     {{ $image := .Resources.GetMatch "thumbnail.webp" }}
     {{ with $image }}
     <div class="card-image">
@@ -27,9 +27,9 @@
             d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z" />
         </svg>
-        <div class="tags" onWheel="this.scrollLeft+=event.deltaY>0?100:-100">
-          {{ range .Params.Tags }}
-          <div class="tag">{{ . }}</div>
+        <div class="filters" onWheel="this.scrollLeft+=event.deltaY>0?100:-100">
+          {{ range .Params.Filters }}
+          <div class="filter">{{ . }}</div>
           {{ end }}
         </div>
       </div>
@@ -39,7 +39,7 @@
 </div>
 
 {{ if .IsSection }}
-{{ $tags := slice }}
-{{ range .Pages }}{{ range.Params.Tags }}{{ $tags = $tags | append . }}{{end}}{{end}}
-{{ partial "lists/filter.html" (dict "context" . "tags" $tags) }}
+{{ $filters := slice }}
+{{ range .Pages }}{{ range.Params.Filters }}{{ $filters = $filters | append . }}{{end}}{{end}}
+{{ partial "lists/filter.html" (dict "context" . "filters" $filters) }}
 {{ end }}
