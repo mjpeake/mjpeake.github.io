@@ -7,6 +7,8 @@ footer {
     margin-top: auto;
     margin-bottom: auto;
 
+    touch-action: none;
+
     @media (max-width: 768px) {
         padding: var(--pad-footer-x) var(--pad-y-md) var(--pad-footer-x) var(--pad-y-md);
     }
