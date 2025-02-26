@@ -33,15 +33,26 @@
 <script>
   var modal = document.getElementById('image-fullscreen');
   var modalClose = document.getElementById('image-fullscreen-exit');
+
+  // Open modal when an image with the 'image-fullscreen-target' class is clicked
+  document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('image-fullscreen-target')) {
+      var img = e.target;
+      var modalImg = document.getElementById("image-fullscreen-content");
+      modal.style.display = "block"; // Show the modal
+      modalImg.src = img.src; // Set the modal image source to the clicked image's source
+    }
+  });
+
+  // Close modal when the close button is clicked
   modalClose.addEventListener('click', function () {
     modal.style.display = "none";
   });
-  document.addEventListener('click', function (e) {
-  if (e.target.classList.contains('image-fullscreen-target')) { // Check if the clicked element has the class 'image-fullscreen-target'
-    var img = e.target;
-    var modalImg = document.getElementById("image-fullscreen-content");
-    modal.style.display = "block"; // Show the modal
-    modalImg.src = img.src; // Set the modal image source to the clicked image's source
-  }
-});
+
+  // Close modal when the ESC key is pressed
+  document.addEventListener('keydown', function (e) {
+    if (e.key === "Escape") { // Check if the pressed key is "ESC"
+      modal.style.display = "none"; // Hide the modal
+    }
+  });
 </script>

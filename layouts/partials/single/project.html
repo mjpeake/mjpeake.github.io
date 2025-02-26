@@ -63,9 +63,21 @@
     });
 
     $('#fullscreen-exit').click(function (e) {
-        $('#showcase').toggleClass('fullscreen');
-        $('#fullscreen-exit').toggleClass('fullscreen');
-        $('canvas').toggleClass('fullscreen');
-        window.dispatchEvent(new Event('resize'));
+        exitFullscreen();
     });
+
+    $(document).keydown(function (e) {
+        if (e.key === "Escape") { // Check if the pressed key is "ESC"
+            exitFullscreen();
+        }
+    });
+
+    function exitFullscreen() {
+        if ($('#showcase').hasClass('fullscreen')) {
+            $('#showcase').removeClass('fullscreen');
+            $('#fullscreen-exit').removeClass('fullscreen');
+            $('canvas').removeClass('fullscreen');
+            window.dispatchEvent(new Event('resize'));
+        }
+    }
 </script>
