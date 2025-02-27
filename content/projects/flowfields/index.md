@@ -8,7 +8,7 @@ language-icon = 'fa-js'
 filters=["Javascript","Art"]
 
 [[script]]
-  src = "https://cdn.jsdelivr.net/npm/@mjpeake/flowfields@2.0.5/dist/flowfields.js"
+  src = "https://cdn.jsdelivr.net/npm/@mjpeake/flowfields@2.0.6/dist/flowfields.js"
 [[adapter]]
   src = "js/projects/flowfields.js"
 [[gallery]]
@@ -26,7 +26,7 @@ npm i @mjpeake/flowfields
 
 Alternatively, you can also use the following script tag reference:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@mjpeake/flowfields@2.0.5/dist/flowfields.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mjpeake/flowfields@2.0.6/dist/flowfields.js"></script>
 ```
 
 ## Usage
@@ -41,7 +41,7 @@ To use FlowFields in your project, include the library in your HTML file and ini
   <title>Flow Fields</title>
   <link rel="stylesheet" href="./assets/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mjpeake/flowfields@2.0.5/dist/flowfields.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mjpeake/flowfields@2.0.6/dist/flowfields.js"></script>
 </head>
 
 <body>

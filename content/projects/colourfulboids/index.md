@@ -8,7 +8,7 @@ language-icon = 'fa-js'
 filters=["Javascript","Art"]
 
 [[script]]
-  src = "https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.1/dist/colourfulboids.js"
+  src = "https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.2/dist/colourfulboids.js"
 [[adapter]]
   src = "js/projects/colourfulboids.js"
 [[gallery]]
@@ -26,7 +26,7 @@ npm i @mjpeake/colourfulboids
 
 Alternatively, you can also use the following script tag reference:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.1/dist/colourfulboids.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.2/dist/colourfulboids.js"></script>
 ```
 
 ## Parameters
@@ -50,7 +50,7 @@ To use Colourful Boids in your project, include the library in your HTML file an
 <head>
   <title>Colourful Boids</title>
   <link rel="stylesheet" href="assets/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.1/dist/colourfulboids.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.2/dist/colourfulboids.js"></script>
   <script> ColourfulBoids("boids") </script>
 </head>
 
