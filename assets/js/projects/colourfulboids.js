@@ -1,1 +1,3 @@
-ColourfulBoids("showcase");
+$(document).ready(function () {
+    ColourfulBoids("showcase");
+});
