@@ -1,0 +1,21 @@
+<div class="project-list">
+  {{ range .Pages }}
+  <a href="{{ .Permalink }}" class="project">
+    <div class="project-thumbnail">
+      {{ $image := .Resources.GetMatch "thumbnail.webp" }}
+      {{ with $image }}
+      <img src="{{ .RelPermalink }}" alt="An image showcasing the {{ .Title }} project in action." />
+      {{end}}
+    </div>
+
+    <div class="project-info">
+      <div class="project-header">
+        <h2>{{ .Title }}</h2>
+      </div>
+      <div class="project-description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu. Proin ac consequat arcu.
+      </div>
+    </div>
+  </a>
+  {{ end }}
+</div>

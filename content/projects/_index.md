@@ -1,5 +1,5 @@
 +++
 title = 'Projects'
-page_type = 'cards'
+page_type = 'projects'
 draft = false
 +++
