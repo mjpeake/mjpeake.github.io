@@ -9,14 +9,11 @@
   <div class="page-title">
     <h1>{{ .Title }}</h1>
   </div>
-
-  <div class="filterBtns" id="filterBtns" onWheel="this.scrollLeft+=event.deltaY>0?100:-100">
-    <button class="filterBtn active" onclick="filterSelection('filterAll')">Show All</button>
-  </div>
 </div>
 
 <div class="overflow">
-  {{ if eq .Params.page_type "cards" }}{{ partial "lists/cards.html" . }}
+  {{ if eq .Params.page_type "projects" }}{{ partial "lists/projects.html" . }}
+  {{ else if eq .Params.page_type "cards" }}{{ partial "lists/cards.html" . }}
   {{ else if eq .Params.page_type "gallery" }}{{ partial "lists/gallery.html" . }}
   {{ end }}
 </div>

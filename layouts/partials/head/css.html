@@ -60,6 +60,16 @@
 {{- end }}
 {{- end }}
 {{- end }}
+{{- else if eq .Params.page_type "projects"}}
+{{- with resources.Get "css/list/projects.css" | minify | fingerprint }}
+{{- if eq hugo.Environment "development" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- else }}
+{{- with . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{- end }}
+{{- end }}
+{{- end }}
 {{ else if eq .Params.page_type "gallery"}}
 {{- with resources.Get "css/list/gallery.css" | minify | fingerprint }}
 {{- if eq hugo.Environment "development" }}

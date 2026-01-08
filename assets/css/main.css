@@ -1,6 +1,6 @@
 :root {
   --bgcolor: #F4F3F2;
-  --bgcolor-off: #EBEBEB;
+  --bgcolor-off: #DBDAD9;
   --accent: #221e20;
   --textcolor: #221e20;
 
@@ -96,6 +96,7 @@ p {
   grid-auto-flow: column;
   grid-template-columns: auto 1fr auto;
   padding: 0 15vw 1rem 15vw;
+  margin: 0 auto;
   align-items: center;
 
   @media (max-width: 768px) {
