@@ -1,7 +1,36 @@
 .project-list {
 	overflow: hidden;
-	padding: 1rem var(--pad-y-xl) 1rem var(--pad-y-xl);
+	padding: 0rem var(--pad-y-xl) 2rem var(--pad-y-xl);
+	margin-bottom: 1rem;
 
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	@media (max-width: 768px) {
+		padding: 0.5rem var(--pad-y-md) 0.5rem var(--pad-y-md);
+	}
+
+	@media (min-width: 768px) and (max-width: 1200px) {
+		padding: 0.5rem var(--pad-y-lg) 0.5rem var(--pad-y-lg);
+	}
+}
+
+.project-grid-header {
+	margin: 0;
+	padding-bottom: 0.5rem;
+
+	font-weight: 600;
+	font-size: 1.75rem;
+	text-decoration: none;
+	color: var(--accent);
+
+	@media (max-width: 768px) {
+		font-size: 1.25rem;
+	}
+}
+
+.project-grid {
 	animation: fadeInAnimation ease 1s;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
@@ -12,19 +41,16 @@
 
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-auto-rows: 1fr;
-	gap: 2rem;
+	gap: 0.5rem;
 
 	@media (max-width: 768px) {
-		padding: 0.5rem var(--pad-y-md) 0.5rem var(--pad-y-md);
 		grid-template-columns: 1fr;
-		gap: 2rem;
+		gap: 1.5rem;
 	}
 
-	@media (min-width: 768px) and (max-width: 1200px) {
-		padding: 0.5rem var(--pad-y-lg) 0.5rem var(--pad-y-lg);
-		grid-template-columns: repeat(2, 1fr);
-		gap: 2rem;
+	@media (min-width: 768px) and (max-width: 1440px) {
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
 	}
 }
 
@@ -32,7 +58,7 @@
 	background-color: var(--bgcolor);
 	border-radius: 14px;
 	overflow: hidden;
-	padding: 0.5rem 1rem 0.5rem 1rem;
+	padding: 0.5rem 1.25rem 0.5rem 1.25rem;
 	position: relative;
 	transition: .15s ease-in;
 
@@ -51,12 +77,9 @@
 	}
 }
 
-.project-thumbnail {
-	border-radius: 7px;
+.project-icon {
 	aspect-ratio: 1 / 1;
-	width: 4rem;
 	overflow: hidden;
-	
 	align-self: center;
 
 	/* Not selectable */
@@ -64,17 +87,18 @@
 	-ms-user-select: none;
 	user-select: none;
 
-	img {
-		width: 100%;
-		height: 100%;
-		display: block;
-		object-fit: cover;
-	}
+	background: var(--accent);
+    height: 3rem;
+    width: 3rem;
+
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
 }
 
 .project-info {
 	display: flex;
- 	flex-direction: column;
+	flex-direction: column;
 	margin: auto 0;
 }
 
@@ -85,18 +109,23 @@
 
 	h2 {
 		font-weight: 600;
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 		text-decoration: none;
 		color: var(--accent);
 		margin: 0;
 
 		@media (max-width: 768px) {
-			font-size: 1.25rem;
+			font-size: 1rem;
 		}
 	}
 }
 
 .project-description {
 	color: var(--accent);
+	line-height: 1.25em;
 	text-decoration: none;
+
+	@media (max-width: 768px) {
+		font-size: 0.85rem;
+	}
 }

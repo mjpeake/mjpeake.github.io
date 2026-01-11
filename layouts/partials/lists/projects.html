@@ -1,21 +1,26 @@
+{{ range .Pages }}
 <div class="project-list">
-  {{ range .Pages }}
-  <a href="{{ .Permalink }}" class="project">
-    <div class="project-thumbnail">
-      {{ $image := .Resources.GetMatch "thumbnail.webp" }}
-      {{ with $image }}
-      <img src="{{ .RelPermalink }}" alt="An image showcasing the {{ .Title }} project in action." />
-      {{end}}
-    </div>
+  <h1 class="project-grid-header" href='{{ lower (replace .Title " " "-") }}'>{{ .Title }}</h1>
+  <div class="project-grid">
+    {{ range .Pages }}
+    <a href="{{if .Params.Link }}{{ .Params.Link }}{{else}}{{ .Params.GitHub }}{{end}}" class="project">
+      {{ $image := .Resources.GetMatch "icon.svg" }}
+      {{ if not $image }}
+      {{ $image = resources.Get "images/default-project.svg" }}
+      {{ end }}
 
-    <div class="project-info">
-      <div class="project-header">
-        <h2>{{ .Title }}</h2>
+      <div class="project-icon" style='mask-image: url("{{ $image.RelPermalink }}");'></div>
+
+      <div class="project-info">
+        <div class="project-header">
+          <h2>{{ .Title }}</h2>
+        </div>
+        <div class="project-description">
+          {{ .Params.Description }}
+        </div>
       </div>
-      <div class="project-description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu. Proin ac consequat arcu.
-      </div>
-    </div>
-  </a>
-  {{ end }}
+    </a>
+    {{ end }}
+  </div>
 </div>
+{{ end }}

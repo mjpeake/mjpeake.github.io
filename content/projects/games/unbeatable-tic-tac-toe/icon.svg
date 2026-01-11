@@ -1,0 +1,16 @@
+<svg width="600" height="601" viewBox="0 0 600 601" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="2.5" x2="2.5" y2="600" stroke="black" stroke-width="5"/>
+<line x1="200.5" x2="200.5" y2="600" stroke="black" stroke-width="5"/>
+<line x1="600" y1="598.5" y2="598.5" stroke="black" stroke-width="5"/>
+<line x1="600" y1="399.5" y2="399.5" stroke="black" stroke-width="5"/>
+<line x1="600" y1="201.5" y2="201.5" stroke="black" stroke-width="5"/>
+<line x1="600" y1="2.5" y2="2.5" stroke="black" stroke-width="5"/>
+<line x1="597.5" y1="1" x2="597.5" y2="601" stroke="black" stroke-width="5"/>
+<line x1="398.5" x2="398.5" y2="600" stroke="black" stroke-width="5"/>
+<rect width="28.1432" height="112.573" transform="matrix(0.705114 0.709094 -0.705114 0.709094 128.377 50)" fill="black"/>
+<rect width="28.1432" height="112.573" transform="matrix(0.705114 -0.709094 0.705114 0.709094 49.7793 70.1753)" fill="black"/>
+<rect width="28.1432" height="112.573" transform="matrix(0.705114 0.709094 -0.705114 0.709094 525.377 50)" fill="black"/>
+<rect width="28.1432" height="112.573" transform="matrix(0.705114 -0.709094 0.705114 0.709094 446.779 70.1753)" fill="black"/>
+<circle cx="300" cy="300" r="37.5" stroke="black" stroke-width="25"/>
+<circle cx="100" cy="497" r="37.5" stroke="black" stroke-width="25"/>
+</svg>
