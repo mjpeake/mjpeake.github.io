@@ -7,9 +7,10 @@ showcaseimage = 'showcase.webp'
 github = 'https://github.com/mjpeake/gameoflife'
 language-icon = 'fa-java'
 filters=["Java","Games"]
+description="An implementation of John Conway's Game of Life with some added functionality."
 +++
 
-A remake of John Conway's Game of Life with added functionality.
+An Java implementation of John Conway's Game of Life with some added functionality.
 
 ## Features
 - Scalable Grid Environment

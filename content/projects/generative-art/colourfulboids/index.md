@@ -3,9 +3,12 @@ title = 'Colourful Boids'
 page_type = "project"
 date = 2023-01-15T09:00:00-07:00
 draft = false
+link = 'https://mattpeake.com/colourfulboids'
 github = 'https://github.com/mjpeake/colourfulboids'
 language-icon = 'fa-js'
 filters=["Javascript","Art"]
+category = 'Generative Art'
+description = "A minimalist animation showcasing flocking behaviour using the boids algorithm."
 
 [[script]]
   src = "https://cdn.jsdelivr.net/npm/@mjpeake/colourfulboids@1.0.2/dist/colourfulboids.js"

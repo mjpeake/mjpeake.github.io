@@ -7,6 +7,7 @@ showcaseimage = 'showcase.webp'
 github = 'https://github.com/mjpeake/unbeatable-tictactoe'
 language-icon = 'fa-java'
 filters=["Java","Games"]
+description="An unbeatable game of Tic-Tac-Toe, achieved using a minimax algortihm."
 +++
 
 An unbeatable game of Tic Tac Toe using a minimax algorithm.

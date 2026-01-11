@@ -1,17 +1,17 @@
 {{ define "main" }}
-<div class="page-title-bar">
-  {{ with .Resources.GetMatch "icon.svg" }}
-  <div class="page-icon">
-    <img src="data:{{ .MediaType.Type }};base64,{{ .Content | base64Encode }}">
-  </div>
-  {{ end }}
-
-  <div class="page-title">
-    <h1>{{ .Title }}</h1>
-  </div>
-</div>
-
 <div class="overflow">
+  <div class="page-title-bar">
+    {{ with .Resources.GetMatch "icon.svg" }}
+    <div class="page-icon">
+      <img src="data:{{ .MediaType.Type }};base64,{{ .Content | base64Encode }}">
+    </div>
+    {{ end }}
+
+    <div class="page-title">
+      <h1>{{ .Title }}</h1>
+    </div>
+  </div>
+
   {{ if eq .Params.page_type "projects" }}{{ partial "lists/projects.html" . }}
   {{ else if eq .Params.page_type "cards" }}{{ partial "lists/cards.html" . }}
   {{ else if eq .Params.page_type "gallery" }}{{ partial "lists/gallery.html" . }}

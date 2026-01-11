@@ -3,9 +3,11 @@ title = 'Flow Fields'
 page_type = "project"
 date = 2023-01-15T09:00:00-07:00
 draft = false
+link = 'https://mattpeake.com/flowfields/'
 github = 'https://github.com/mjpeake/flowfields'
 language-icon = 'fa-js'
 filters=["Javascript","Art"]
+description="Generative and customisable flow fields using perlin noise."
 
 [[script]]
   src = "https://cdn.jsdelivr.net/npm/@mjpeake/flowfields@2.0.6/dist/flowfields.js"
