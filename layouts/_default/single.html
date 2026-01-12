@@ -14,7 +14,5 @@
   <i class='fab {{ .Param "language-icon" }} title-icon'></i>
 </div>
 
-<div class="overflow">
-  {{ if eq .Params.page_type "project" }}{{ partial "single/project.html" . }}{{ end }}
-</div>
+<div class="overflow"></div>
 {{ end }}

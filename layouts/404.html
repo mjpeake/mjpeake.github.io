@@ -9,7 +9,7 @@
 <body>
     <main>
         <div class="body-404">
-            {{- $logo := resources.Get "images/logo.svg" }}
+            {{- $logo := resources.Get "images/icons/logo.svg" }}
             <div class="logo-404"><a href="{{ .Site.BaseURL }}"><img src="{{ $logo.RelPermalink }}" alt="Logo"></a></div>
             <div class="text-404">404</div>
             <div class="subtext-404">PAGE NOT FOUND</div>

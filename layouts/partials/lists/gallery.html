@@ -15,44 +15,42 @@
 
 <div class="gallery">
   {{- range $shuffledImages }}
-  <div class="image-container filterElement filterAll filter{{ .type }}">
+  <div class="image-container">
     <img class="image-fullscreen-target" src="{{ .image.RelPermalink }}">
   </div>
   {{- end }}
 </div>
 
 <div id="image-fullscreen" class="image-fullscreen">
-  <button id="image-fullscreen-exit" class="image-fullscreen-exit">&times;</button>
   <img id="image-fullscreen-content" class="image-fullscreen-content">
+  <p class="image-fullscreen-exit-text">(click anywhere to exit)</p>
 </div>
-
-{{- if .IsSection }}
-{{ partial "lists/filter.html" (dict "context" . "filters" $typemap) }}
-{{- end }}
 
 <script>
   var modal = document.getElementById('image-fullscreen');
-  var modalClose = document.getElementById('image-fullscreen-exit');
+  var modalImg = document.getElementById("image-fullscreen-content");
+  var exitText = document.querySelector('.image-fullscreen-exit-text');
 
   // Open modal when an image with the 'image-fullscreen-target' class is clicked
   document.addEventListener('click', function (e) {
     if (e.target.classList.contains('image-fullscreen-target')) {
       var img = e.target;
-      var modalImg = document.getElementById("image-fullscreen-content");
       modal.style.display = "block"; // Show the modal
       modalImg.src = img.src; // Set the modal image source to the clicked image's source
     }
   });
 
-  // Close modal when the close button is clicked
-  modalClose.addEventListener('click', function () {
-    modal.style.display = "none";
+  // Close modal when clicking outside the image or on the exit text
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal || e.target === exitText) {
+      modal.style.display = "none";
+    }
   });
 
   // Close modal when the ESC key is pressed
   document.addEventListener('keydown', function (e) {
-    if (e.key === "Escape") { // Check if the pressed key is "ESC"
-      modal.style.display = "none"; // Hide the modal
+    if (e.key === "Escape") {
+      modal.style.display = "none";
     }
   });
 </script>

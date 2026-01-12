@@ -6,7 +6,7 @@
     <a href="{{if .Params.Link }}{{ .Params.Link }}{{else}}{{ .Params.GitHub }}{{end}}" class="project">
       {{ $image := .Resources.GetMatch "icon.svg" }}
       {{ if not $image }}
-      {{ $image = resources.Get "images/default-project.svg" }}
+      {{ $image = resources.Get "images/icons/default-project.svg" }}
       {{ end }}
 
       <div class="project-icon" style='mask-image: url("{{ $image.RelPermalink }}");'></div>
