@@ -13,7 +13,6 @@
   </div>
 
   {{ if eq .Params.page_type "projects" }}{{ partial "lists/projects.html" . }}
-  {{ else if eq .Params.page_type "cards" }}{{ partial "lists/cards.html" . }}
   {{ else if eq .Params.page_type "gallery" }}{{ partial "lists/gallery.html" . }}
   {{ end }}
 </div>

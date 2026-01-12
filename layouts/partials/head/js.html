@@ -1,28 +1,30 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-{{- with resources.Get "js/main.js" }}
-{{- if eq hugo.Environment "development" }}
-{{- with . | js.Build }}
-  <script src="{{ .RelPermalink }}"></script>
-{{- end }}
-{{- else }}
-{{- $opts := dict "minify" true }}
-{{- with . | js.Build $opts | fingerprint }}
-  <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
-{{- end }}
-{{- end }}
-{{- end }}
-{{- range .Params.Script }}
-{{- if .type }}
-  <script type="{{ .type }}" src="{{ .src }}"></script>
-{{- else }}
-  <script src="{{ .src }}"></script>
-{{- end }}
-{{- end }}
-{{- range .Params.Adapter }}
-{{- $js := resources.Get .src }}
-{{- if .type }}
-  <script type="{{ .type }}" src="{{ $js.RelPermalink }}" defer></script>
-{{- else }}
-  <script src="{{ $js.RelPermalink }}" defer></script>
-{{- end }}
-{{- end }}
+  {{- with resources.Get "js/main.js" }}
+    {{- if eq hugo.Environment "development" }}
+      {{- with . | js.Build }}
+        <script src="{{ .RelPermalink }}"></script>
+      {{- end }}
+    {{- else }}
+      {{- $opts := dict "minify" true }}
+      {{- with . | js.Build $opts | fingerprint }}
+        <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      {{- end }}
+    {{- end }}
+  {{- end }}
+
+  {{- range .Params.Script }}
+    {{- if .type }}
+      <script type="{{ .type }}" src="{{ .src }}"></script>
+    {{- else }}
+      <script src="{{ .src }}"></script>
+    {{- end }}
+  {{- end }}
+  
+  {{- range .Params.Adapter }}
+    {{- $js := resources.Get .src }}
+    {{- if .type }}
+      <script type="{{ .type }}" src="{{ $js.RelPermalink }}" defer></script>
+    {{- else }}
+      <script src="{{ $js.RelPermalink }}" defer></script>
+    {{- end }}
+  {{- end }}

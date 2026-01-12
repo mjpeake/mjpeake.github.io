@@ -1,5 +1,5 @@
     <div class="navbar">
-    {{- $logo := resources.Get "images/logo.svg" }}
+    {{- $logo := resources.Get "images/icons/logo.svg" }}
         <div class="logo"><a href="{{ .Site.BaseURL }}"><img src="{{ $logo.RelPermalink }}" alt="Logo"></a></div>
         <div class="navmenu">{{- range .Site.Menus.main }}<a href='{{ .URL }}' class='navmenu-text' role='button'>{{ .Name }}</a>{{- end }}</div>
     </div>
