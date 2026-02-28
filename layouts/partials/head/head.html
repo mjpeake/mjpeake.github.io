@@ -1,9 +1,17 @@
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.5">
-  <meta name="description" content="Matt Peake - Software Engineer | Passionate about coding and problem-solving. Discover my journey in software development and explore projects showcasing my skills.">
-  <meta name="keywords" content="Software Engineer, Web Development, Programming Languages, Problem-solving, Software Architecture, Code, Projects, Portfolio, Innovation, Collaboration, Digital Solutions, Technology, Coding, Software Development, Graduated Developer, Aspiring Developer, Skills, Expertise, Solutions, Empowering Businesses"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{- $defaultDescription := "Matt Peake - Software Engineer portfolio with interactive projects and generative art." }}
+  {{- $description := or .Description .Params.description $defaultDescription }}
+  <meta name="description" content="{{ $description }}">
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+  <link rel="canonical" href="{{ .Permalink }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}">
+  <meta property="og:description" content="{{ $description }}">
+  <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}">
+  <meta name="twitter:description" content="{{ $description }}">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">

@@ -1,5 +1,5 @@
-    <div class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
     {{- $logo := resources.Get "images/icons/logo.svg" }}
-        <div class="logo"><a href="{{ .Site.BaseURL }}"><img src="{{ $logo.RelPermalink }}" alt="Logo"></a></div>
-        <div class="navmenu">{{- range .Site.Menus.main }}<a href='{{ .URL }}' class='navmenu-text' role='button'>{{ .Name }}</a>{{- end }}</div>
-    </div>
+        <div class="logo"><a href="{{ .Site.BaseURL }}"><img src="{{ $logo.RelPermalink }}" alt="Matt Peake logo"></a></div>
+        <div class="navmenu">{{- range .Site.Menus.main }}<a href='{{ .URL }}' class='navmenu-text'>{{ .Name }}</a>{{- end }}</div>
+    </nav>

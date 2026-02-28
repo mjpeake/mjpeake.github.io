@@ -3,7 +3,7 @@
   <div class="page-title-bar">
     {{ with .Resources.GetMatch "icon.svg" }}
     <div class="page-icon">
-      <img src="data:{{ .MediaType.Type }};base64,{{ .Content | base64Encode }}">
+      <img src="data:{{ .MediaType.Type }};base64,{{ .Content | base64Encode }}" alt="">
     </div>
     {{ end }}
 

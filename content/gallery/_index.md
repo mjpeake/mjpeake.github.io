@@ -7,6 +7,9 @@ draft = false
   type = 'FlowFields'
   location = '/images/gallery/flowfields/*'
 [[gallery]]
+  type = 'ColourfulBoids'
+  location = '/images/gallery/colourfulboids/*'
+[[gallery]]
   type = 'WavingTiles'
   location = '/images/gallery/wavingtiles/*'
 +++

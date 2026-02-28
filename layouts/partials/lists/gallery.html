@@ -1,4 +1,3 @@
-{{- $typemap := dict }}
 {{- $shuffledImages := slice }}
 
 {{- range .Params.gallery }}
@@ -7,22 +6,26 @@
 
 {{- range $images }}
 {{- $shuffledImages = $shuffledImages | append (dict "image" . "type" $type) }}
-{{- $typemap = merge $typemap (dict .RelPermalink $type) }}
 {{- end }}
 {{- end }}
 
 {{- $shuffledImages := partial "tools/shuffle.html" $shuffledImages }}
 
 <div class="gallery">
-  {{- range $shuffledImages }}
+  {{- range $index, $item := $shuffledImages }}
   <div class="image-container">
-    <img class="image-fullscreen-target" src="{{ .image.RelPermalink }}">
+    <img
+      class="image-fullscreen-target"
+      src="{{ $item.image.RelPermalink }}"
+      alt="{{ $item.type }} artwork {{ add $index 1 }}"
+      loading="lazy"
+      decoding="async">
   </div>
   {{- end }}
 </div>
 
 <div id="image-fullscreen" class="image-fullscreen">
-  <img id="image-fullscreen-content" class="image-fullscreen-content">
+  <img id="image-fullscreen-content" class="image-fullscreen-content" alt="">
   <p class="image-fullscreen-exit-text">(click anywhere to exit)</p>
 </div>
 
@@ -37,6 +40,7 @@
       var img = e.target;
       modal.style.display = "block"; // Show the modal
       modalImg.src = img.src; // Set the modal image source to the clicked image's source
+      modalImg.alt = img.alt;
     }
   });
 

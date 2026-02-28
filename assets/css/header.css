@@ -7,8 +7,6 @@ header {
     margin-top: auto;
     margin-bottom: auto;
 
-    touch-action: none;
-
     @media (max-width: 768px) {
         padding: var(--pad-header-x) var(--pad-y-md) var(--pad-header-x) var(--pad-y-md);
     }

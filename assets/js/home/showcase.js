@@ -1,5 +1,9 @@
-$(document).ready(function () {
-    const color = $('#home-showcase').css("color");
-    const bgColor = $('#home-showcase').css("background-color");
-    ColourfulBoids('home-showcase', color, bgColor);
+document.addEventListener("DOMContentLoaded", function () {
+    var showcase = document.getElementById("home-showcase");
+    if (!showcase) return;
+
+    var style = window.getComputedStyle(showcase);
+    var color = style.color;
+    var bgColor = style.backgroundColor;
+    ColourfulBoids("home-showcase", color, bgColor);
 });

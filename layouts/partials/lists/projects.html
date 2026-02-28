@@ -1,6 +1,6 @@
 {{ range .Pages }}
 <div class="project-list">
-  <h1 class="project-grid-header" href='{{ lower (replace .Title " " "-") }}'>{{ .Title }}</h1>
+  <h1 class="project-grid-header">{{ .Title }}</h1>
   <div class="project-grid">
     {{ range .Pages }}
     <a href="{{if .Params.Link }}{{ .Params.Link }}{{else}}{{ .Params.GitHub }}{{end}}" class="project">

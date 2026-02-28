@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="page-title-bar">
-  <a class="back-button" href="{{ .Parent.RelPermalink }}">
+  <a class="back-button" href="{{ .Parent.RelPermalink }}" aria-label="Back to {{ .Parent.Title }}">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
       class="w-6 h-6">
       <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
@@ -10,9 +10,36 @@
     <h1>{{ .Title }}</h1>
   </div>
 
-  <a href='{{ .Params.Github }}' class="title-icon-link"><i class='fab fa-github title-icon'></i></a>
-  <i class='fab {{ .Param "language-icon" }} title-icon'></i>
+  {{ with .Params.Github }}
+  <a href="{{ . }}" class="title-icon-link" aria-label="View source on GitHub">
+    <i class='fab fa-github title-icon'></i>
+  </a>
+  {{ end }}
+  {{ with .Param "language-icon" }}
+  <i class='fab {{ . }} title-icon' aria-hidden="true"></i>
+  {{ end }}
 </div>
 
-<div class="overflow"></div>
+<div class="overflow">
+  <article class="single-content">
+    {{ with .Params.Description }}
+    <p class="single-description">{{ . }}</p>
+    {{ end }}
+
+    <div class="single-actions">
+      {{ with .Params.Link }}
+      <a href="{{ . }}" class="single-action">View Project</a>
+      {{ end }}
+      {{ with .Params.Github }}
+      <a href="{{ . }}" class="single-action">View Source</a>
+      {{ end }}
+    </div>
+
+    {{ if .Content }}
+    <div class="single-body">
+      {{ .Content }}
+    </div>
+    {{ end }}
+  </article>
+</div>
 {{ end }}

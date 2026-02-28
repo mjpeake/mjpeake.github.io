@@ -5,5 +5,12 @@
             <a href="https://www.hackerrank.com/mattpeake" aria-label="HackerRank" class="icon fa-hackerrank"></a>
             <a href="https://github.com/mjpeake" aria-label="GitHub" class="icon fa-github"></a>
         </div>
-        <small class="copyright">© 2025 mattpeake. All rights reserved.</small>
+        <small class="copyright">&copy; <span id="copyright-year">{{ now.Year }}</span> mattpeake. All rights reserved.</small>
     </div>
+    <script>
+      (function () {
+        var yearNode = document.getElementById("copyright-year");
+        if (!yearNode) return;
+        yearNode.textContent = new Date().getFullYear();
+      })();
+    </script>
