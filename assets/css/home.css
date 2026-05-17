@@ -9,5 +9,13 @@
     left: 0;
 
     color: var(--accent);
-    background-color: var(--bgcolor-off);
+    background-color: var(--surface);
+}
+
+#home-showcase canvas {
+    transition: filter 0.2s ease;
+}
+
+#home-showcase[data-showcase-inverted="true"] canvas {
+    filter: invert(1);
 }

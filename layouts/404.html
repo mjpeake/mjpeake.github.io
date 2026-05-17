@@ -10,7 +10,7 @@
     <main>
         <div class="body-404">
             {{- $logo := resources.Get "images/icons/logo.svg" }}
-            <div class="logo-404"><a href="{{ .Site.BaseURL }}"><img src="{{ $logo.RelPermalink }}" alt="Logo"></a></div>
+            <div class="logo-404"><a href="{{ .Site.BaseURL }}" aria-label="Matt Peake home"><span class="logo-mark" style="--logo-url: url('{{ $logo.RelPermalink }}');" aria-hidden="true"></span></a></div>
             <div class="text-404">404</div>
             <div class="subtext-404">PAGE NOT FOUND</div>
         </div>

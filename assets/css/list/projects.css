@@ -55,7 +55,7 @@
 }
 
 .project {
-	background-color: var(--bgcolor);
+	background-color: var(--surface);
 	border-radius: 14px;
 	overflow: hidden;
 	padding: 0.5rem 1.25rem 0.5rem 1.25rem;
@@ -73,7 +73,7 @@
 	align-content: stretch;
 
 	&:hover {
-		background-color: var(--bgcolor-off);
+		background-color: var(--surface-hover);
 	}
 }
 

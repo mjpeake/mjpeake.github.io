@@ -37,7 +37,7 @@
 .single-description {
   margin: 0 0 1rem 0;
   font-size: 1.1rem;
-  color: var(--accent);
+  color: var(--muted-text);
 }
 
 .single-actions {
@@ -49,7 +49,7 @@
 
 .single-action {
   background: var(--accent);
-  color: var(--bgcolor);
+  color: var(--button-text);
   text-decoration: none;
   padding: 0.4rem 0.8rem;
   border-radius: 8px;

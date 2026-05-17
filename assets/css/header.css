@@ -34,15 +34,10 @@ header {
     user-select: none;
     width: min-content;
 
-    img {
-        display: block;
-        width: 3rem;
-        pointer-events: none;
-    }
-
     @media (max-width: 768px) {
-        img {
+        .logo-mark {
             width: 2rem;
+            height: 2rem;
         }
     }
 }
@@ -51,6 +46,7 @@ header {
     display: grid;
     grid-auto-flow: column;
     column-gap: 1.5rem;
+    align-items: center;
 }
 
 .navmenu-text {
@@ -69,5 +65,76 @@ header {
 .navmenu-text:hover {
     text-decoration: none;
     color: var(--textcolor);
-    border-bottom: 4px solid black;
+    border-bottom: 4px solid var(--border-color);
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: 1px solid var(--theme-toggle-border);
+    border-radius: 50%;
+    background-color: var(--theme-toggle-bg);
+    color: var(--accent);
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, color 0.15s ease;
+
+    @media (max-width: 768px) {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+}
+
+.theme-toggle:hover {
+    background-color: var(--surface);
+    border-color: var(--border-color);
+}
+
+.theme-toggle:active {
+    transform: translateY(1px);
+}
+
+.theme-toggle-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.1rem;
+    height: 1.1rem;
+    color: currentColor;
+}
+
+.theme-toggle-icon-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.theme-toggle-icon-sun {
+    display: none;
+}
+
+.theme-toggle[data-theme-icon="sun"] .theme-toggle-icon-sun {
+    display: block;
+}
+
+.theme-toggle[data-theme-icon="sun"] .theme-toggle-icon-moon {
+    display: none;
+}
+
+.theme-toggle[data-theme-icon="moon"] .theme-toggle-icon-moon {
+    display: block;
+}
+
+.theme-toggle[data-theme-icon="moon"] .theme-toggle-icon-sun {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navmenu {
+        column-gap: 0.75rem;
+    }
 }

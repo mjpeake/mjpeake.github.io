@@ -26,11 +26,11 @@
 }
 
 .filterBtn {
-	background-color: var(--bgcolor);
+	background-color: var(--surface);
 	padding: 2px 6px 2px 6px;
 	border-radius: 8px;
 	border-width: .125rem;
-	border-color: var(--accent);
+	border-color: var(--border-color);
 
 	font-family: var(--text-font);
 	font-size: 1rem;
@@ -62,13 +62,13 @@
 }
 
 .filterBtn:hover:not(.filterBtn.active) {
-	filter: brightness(90%);
+	background-color: var(--surface-hover);
 }
 
 /* Add a dark background to the active button */
 .filterBtn.active {
 	background-color: var(--accent);
-	color: var(--bgcolor);
+	color: var(--button-text);
 }
 
 .show {

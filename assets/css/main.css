@@ -3,6 +3,15 @@
   --bgcolor-off: #dcdbda;
   --accent: #141414;
   --textcolor: #141414;
+  --surface: #ebe8e6;
+  --surface-hover: #dcdbda;
+  --border-color: #141414;
+  --muted-text: #494544;
+  --overlay-bg: rgba(20, 20, 20, 0.85);
+  --button-text: #F4F3F2;
+  --focus-ring: rgba(20, 20, 20, 0.24);
+  --theme-toggle-bg: rgba(20, 20, 20, 0.04);
+  --theme-toggle-border: rgba(20, 20, 20, 0.16);
 
   --pad-y-md: 5vw;
   --pad-y-lg: 10vw;
@@ -23,6 +32,22 @@
   --text-font: "Gidole Regular", sans-serif;
 }
 
+[data-theme="dark"] {
+  --bgcolor: #121212;
+  --bgcolor-off: #1b1b1b;
+  --accent: #f5f5f5;
+  --textcolor: #f5f5f5;
+  --surface: #1e1e1e;
+  --surface-hover: #2a2a2a;
+  --border-color: rgba(245, 245, 245, 0.3);
+  --muted-text: #c7c7c7;
+  --overlay-bg: rgba(0, 0, 0, 0.78);
+  --button-text: #121212;
+  --focus-ring: rgba(245, 245, 245, 0.34);
+  --theme-toggle-bg: rgba(245, 245, 245, 0.04);
+  --theme-toggle-border: rgba(245, 245, 245, 0.18);
+}
+
 ::selection {
   color: var(--bgcolor);
   background: var(--textcolor);
@@ -31,6 +56,11 @@
 html {
   height: 100%;
   background-color: var(--bgcolor);
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
@@ -46,6 +76,8 @@ body {
   text-align: left;
 
   font-family: var(--text-font);
+  color: var(--textcolor);
+  background-color: var(--bgcolor);
 
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -89,6 +121,16 @@ h2 {
 
 p {
   font-family: var(--text-font);
+  color: var(--textcolor);
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 4px;
 }
 
 .page-title-bar {
@@ -135,10 +177,17 @@ p {
 .page-icon {
   width: 2rem;
   height: 2rem;
+  color: var(--accent);
 
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 
@@ -158,10 +207,9 @@ p {
   width: min-content;
   margin: auto;
 
-  img {
-      display: block;
-      width: 5vh;
-      pointer-events: none;
+  .logo-mark {
+    width: 5vh;
+    height: 5vh;
   }
 }
 
@@ -170,10 +218,28 @@ p {
   font-family: var(--main-font);
   font-weight: bold;
   font-size: 12vh;
+  color: var(--textcolor);
 }
 
 .subtext-404 {
   text-align: center;
   font-family: var(--text-font);
   font-size: 2vh;
+  color: var(--muted-text);
+}
+
+.logo-mark {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  pointer-events: none;
+  background-color: var(--accent);
+  mask-image: var(--logo-url);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-image: var(--logo-url);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
 }
