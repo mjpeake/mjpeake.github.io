@@ -1,3 +1,11 @@
+.home-showcase-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
 .home-showcase {
     overflow: hidden;
 }
@@ -10,6 +18,38 @@
 
     color: var(--accent);
     background-color: var(--surface);
+}
+
+.home-showcase-title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    max-width: min(28rem, 100%);
+    padding-block: clamp(0.65rem, 1.5vh, 1rem);
+    padding-inline-start: var(--pad-y-xxl);
+    padding-inline-end: clamp(1.5rem, 6vw, 4rem);
+    background-color: var(--bgcolor);
+    color: var(--accent);
+    font-family: var(--main-font);
+    font-size: clamp(1rem, 2vw, 1.45rem);
+    font-weight: bold;
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .home-showcase-title {
+        padding-inline-start: var(--pad-y-md);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .home-showcase-title {
+        padding-inline-start: var(--pad-y-lg);
+    }
 }
 
 #home-showcase canvas {
