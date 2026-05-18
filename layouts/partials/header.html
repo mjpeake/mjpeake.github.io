@@ -3,14 +3,10 @@
         <div class="logo"><a href="{{ .Site.BaseURL }}" aria-label="Matt Peake home"><span class="logo-mark" style="--logo-url: url('{{ $logo.RelPermalink }}');" aria-hidden="true"></span></a></div>
         <div class="navmenu">
           {{- range .Site.Menus.main }}<a href='{{ .URL }}' class='navmenu-text'>{{ .Name }}</a>{{- end }}
-          <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Toggle color theme" title="Toggle color theme">
-            <span class="theme-toggle-icon" data-theme-toggle-icon data-theme-icon="moon" aria-hidden="true">
-              <svg class="theme-toggle-icon-svg theme-toggle-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75C12.615 15.75 8.25 11.385 8.25 6c0-1.33.266-2.597.748-3.752A9.753 9.753 0 1 0 21.752 15.002Z" />
-              </svg>
-              <svg class="theme-toggle-icon-svg theme-toggle-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM12 18.75a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 .75-.75ZM4.398 4.398a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.06ZM17.482 17.482a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 0 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.06ZM2.25 12a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5H3A.75.75 0 0 1 2.25 12ZM18.75 12a.75.75 0 0 1 .75-.75H21a.75.75 0 0 1 0 1.5h-1.5a.75.75 0 0 1-.75-.75ZM5.458 17.482a.75.75 0 0 1 1.06 1.06l-1.06 1.06a.75.75 0 0 1-1.06-1.06l1.06-1.06ZM18.542 4.398a.75.75 0 0 1 1.06 1.06l-1.06 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06ZM12 6.75A5.25 5.25 0 1 1 6.75 12 5.256 5.256 0 0 1 12 6.75Zm0 1.5A3.75 3.75 0 1 0 15.75 12 3.754 3.754 0 0 0 12 8.25Z" />
-              </svg>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark mode" title="Toggle color theme">
+            <span class="theme-toggle-icon" aria-hidden="true">
+              <i class="theme-toggle-icon-symbol theme-toggle-icon-moon fas fa-moon"></i>
+              <i class="theme-toggle-icon-symbol theme-toggle-icon-sun fas fa-sun"></i>
             </span>
           </button>
         </div>

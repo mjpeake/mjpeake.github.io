@@ -26,18 +26,53 @@
     bottom: 0;
     z-index: 1;
     box-sizing: border-box;
+    display: grid;
+    row-gap: 0.2rem;
     max-width: min(28rem, 100%);
     padding-block: clamp(0.65rem, 1.5vh, 1rem);
     padding-inline-start: var(--pad-y-xxl);
-    padding-inline-end: clamp(1.5rem, 6vw, 4rem);
+    padding-inline-end: clamp(1.25rem, 4vw, 3rem);
+    border-top: 4px solid var(--accent);
     background-color: var(--bgcolor);
     color: var(--accent);
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.home-showcase-title:hover,
+.home-showcase-title:focus-visible {
+    background-color: var(--accent);
+    color: var(--button-text);
+}
+
+.home-showcase-title-kicker {
+    font-family: var(--second-font);
+    font-size: clamp(0.58rem, 0.85vw, 0.72rem);
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.home-showcase-title-name {
     font-family: var(--main-font);
     font-size: clamp(1rem, 2vw, 1.45rem);
     font-weight: bold;
     line-height: 1.1;
     overflow-wrap: anywhere;
-    pointer-events: none;
+}
+
+.home-showcase-title-arrow {
+    display: inline-block;
+    margin-left: 0.35rem;
+    font-size: 0.78em;
+    line-height: 1;
+    vertical-align: 0.04em;
+    transition: transform 0.15s ease;
+}
+
+.home-showcase-title:hover .home-showcase-title-arrow,
+.home-showcase-title:focus-visible .home-showcase-title-arrow {
+    transform: translateX(0.18rem);
 }
 
 @media (max-width: 768px) {

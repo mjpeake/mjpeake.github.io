@@ -42,7 +42,7 @@
     var isDark = theme === "dark";
     toggle.setAttribute("data-theme-icon", isDark ? "sun" : "moon");
     toggle.setAttribute("aria-pressed", String(isDark));
-    toggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+    toggle.setAttribute("aria-label", "Dark mode");
     toggle.setAttribute("title", isDark ? "Switch to light mode" : "Switch to dark mode");
   }
 
