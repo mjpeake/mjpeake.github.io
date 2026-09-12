@@ -60,11 +60,13 @@ footer {
     }
 }
 
-.icon-logo img {
+.icon-logo-mark {
     width: 1em;
     height: 1em;
     display: inline-block;
-    object-fit: contain;
+    background-color: currentColor;
+    -webkit-mask: url("/vendor/leetcode.svg") center / contain no-repeat;
+    mask: url("/vendor/leetcode.svg") center / contain no-repeat;
     vertical-align: -0.1em;
 }
 
