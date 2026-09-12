@@ -1,0 +1,26 @@
+{{- $asset := . -}}
+{{- $path := $asset -}}
+{{- $type := "" -}}
+{{- if reflect.IsMap $asset }}
+  {{- $path = $asset.src -}}
+  {{- with $asset.type }}
+    {{- $type = . -}}
+  {{- end }}
+{{- end }}
+{{- with resources.Get $path }}
+  {{- if eq hugo.Environment "development" }}
+    {{- if $type }}
+      <script type="{{ $type }}" src="{{ .RelPermalink }}" defer></script>
+    {{- else }}
+      <script src="{{ .RelPermalink }}" defer></script>
+    {{- end }}
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+      {{- if $type }}
+        <script type="{{ $type }}" src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+      {{- else }}
+        <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}

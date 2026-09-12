@@ -1,0 +1,17 @@
+  {{- partial "asset/js.html" "js/theme.js" }}
+
+  {{- range .Params.script }}
+    {{- if .type }}
+      <script type="{{ .type }}" src="{{ .src }}"></script>
+    {{- else }}
+      <script src="{{ .src }}"></script>
+    {{- end }}
+  {{- end }}
+
+  {{- range .Params.adapter }}
+    {{- partial "asset/js.html" . }}
+  {{- end }}
+
+  {{- if eq .Section "gallery" }}
+    {{- partial "asset/js.html" "js/gallery-lightbox.js" }}
+  {{- end }}

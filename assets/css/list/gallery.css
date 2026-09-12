@@ -47,11 +47,25 @@
   margin-bottom: 8px;
   overflow: hidden;
 
+  button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  button:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 4px;
+  }
+
   img {
     width: 100%;
     display: block;
     transition: transform .4s;
-    cursor: pointer;
 
     &:hover {
       transform: scale(1.1);
@@ -61,35 +75,133 @@
   }
 }
 
+.gallery-modal-open,
+.gallery-modal-open body {
+  overflow: hidden;
+}
+
 .image-fullscreen {
   display: none;
   position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
+  inset: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  padding: clamp(1rem, 3vw, 2rem);
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   background-color: var(--overlay-bg);
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
+.image-fullscreen.is-open {
+  display: grid;
+  place-items: center;
+}
+
+.image-fullscreen-shell {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr) 3rem;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  width: min(100%, 1180px);
+  max-height: 100%;
+}
+
+.image-fullscreen-figure {
+  display: grid;
+  justify-items: center;
+  gap: 0.85rem;
+  margin: 0;
+  min-width: 0;
+}
+
 .image-fullscreen-content {
-  margin: auto;
   display: block;
   width: auto;
   height: auto;
   opacity: 1 !important;
-  max-width: 80vw;
-  max-height: 80vh;
+  max-width: 100%;
+  max-height: min(76vh, 820px);
+  object-fit: contain;
 
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.5s;
   animation-name: zoom;
   animation-duration: 0.5s;
+}
+
+.image-fullscreen-close,
+.image-fullscreen-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 2px solid rgba(244, 243, 242, 0.45);
+  background: rgba(244, 243, 242, 0.08);
+  color: #F4F3F2;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.image-fullscreen-close:hover,
+.image-fullscreen-close:focus-visible,
+.image-fullscreen-nav:hover,
+.image-fullscreen-nav:focus-visible {
+  background: #F4F3F2;
+  border-color: #F4F3F2;
+  color: #141414;
+}
+
+.image-fullscreen-close:active,
+.image-fullscreen-nav:active {
+  transform: translateY(1px);
+}
+
+.image-fullscreen-close {
+  position: absolute;
+  top: clamp(0.75rem, 2vw, 1.25rem);
+  right: clamp(0.75rem, 2vw, 1.25rem);
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+
+.image-fullscreen-nav {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.15rem;
+}
+
+.image-fullscreen-prev {
+  justify-self: end;
+}
+
+.image-fullscreen-next {
+  justify-self: start;
+}
+
+.image-fullscreen-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  width: 100%;
+  color: #F4F3F2;
+  font-family: var(--text-font);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.image-fullscreen-caption {
+  font-size: 1rem;
+}
+
+.image-fullscreen-counter {
+  color: rgba(244, 243, 242, 0.72);
+  font-size: 0.95rem;
 }
 
 @-webkit-keyframes zoom {
@@ -112,25 +224,45 @@
   }
 }
 
-.image-fullscreen-exit-text {
-  position: static;
-  display: block;
-  margin-top: 1rem;
-  text-align: center;
-
-  font-size: 1rem;
-  transition: .25s ease;
-  opacity: 60%;
-
-  color: var(--textcolor);
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    opacity: 100%;
+@media (max-width: 768px) {
+  .image-fullscreen {
+    padding: 3.75rem var(--pad-y-md) 1rem var(--pad-y-md);
   }
 
-  @media (max-width: 768px) {
+  .image-fullscreen-shell {
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    gap: 0.75rem;
+  }
+
+  .image-fullscreen-figure {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .image-fullscreen-content {
+    max-height: 68vh;
+  }
+
+  .image-fullscreen-prev,
+  .image-fullscreen-next {
+    grid-row: 2;
+    width: 100%;
+    height: 2.75rem;
+  }
+
+  .image-fullscreen-prev {
+    grid-column: 1;
+    justify-self: stretch;
+  }
+
+  .image-fullscreen-next {
+    grid-column: 2;
+    justify-self: stretch;
+  }
+
+  .image-fullscreen-caption,
+  .image-fullscreen-counter {
     font-size: 0.875rem;
   }
 }

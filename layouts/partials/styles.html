@@ -1,0 +1,21 @@
+  <link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/fontawesome/css/brands.min.css">
+  <link rel="stylesheet" href="/fontawesome/css/solid.min.css">
+  <link rel="stylesheet" href="/fonts/kollektif/stylesheet.css">
+  <link rel="stylesheet" href="/fonts/kollektif-bold/stylesheet.css">
+  <link rel="stylesheet" href="/fonts/gidole/stylesheet.css">
+
+  {{- range slice "css/header.css" "css/main.css" "css/footer.css" }}
+    {{- partial "asset/css.html" . }}
+  {{- end }}
+
+  {{- if .IsHome }}
+    {{- partial "asset/css.html" "css/home.css" }}
+  {{- else if .IsSection }}
+    {{- partial "asset/css.html" "css/list/list.css" }}
+    {{- if eq .Section "projects" }}
+      {{- partial "asset/css.html" "css/list/projects.css" }}
+    {{- else if eq .Section "gallery" }}
+      {{- partial "asset/css.html" "css/list/gallery.css" }}
+    {{- end }}
+  {{- end }}

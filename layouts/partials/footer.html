@@ -12,10 +12,3 @@
         </div>
         <small class="copyright">&copy; <span id="copyright-year">{{ now.Year }}</span> mattpeake. All rights reserved.</small>
     </div>
-    <script>
-      (function () {
-        var yearNode = document.getElementById("copyright-year");
-        if (!yearNode) return;
-        yearNode.textContent = new Date().getFullYear();
-      })();
-    </script>

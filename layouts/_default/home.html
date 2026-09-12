@@ -1,9 +1,10 @@
 {{- define "main"}}
+{{- $showcase := .Params.showcase }}
 <div class="home-showcase-frame">
     <div class="home-showcase" id="home-showcase"></div>
-    <a class="home-showcase-title" href="https://mattpeake.com/colourfulboids" aria-label="View Colourful Boids project">
+    <a class="home-showcase-title" href="{{ $showcase.url }}" aria-label="View {{ $showcase.title }} project">
         <span class="home-showcase-title-kicker">Showcase</span>
-        <span class="home-showcase-title-name">Colourful Boids <i class="home-showcase-title-arrow fas fa-arrow-right" aria-hidden="true"></i></span>
+        <span class="home-showcase-title-name">{{ $showcase.title }} <i class="home-showcase-title-arrow fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 </div>
 {{- end }}

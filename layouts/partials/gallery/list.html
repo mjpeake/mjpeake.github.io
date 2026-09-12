@@ -1,0 +1,66 @@
+{{- $shuffledImages := slice }}
+
+{{- range .Params.gallery }}
+  {{- $type := .type }}
+  {{- $description := .description }}
+  {{- $images := resources.Match .location }}
+
+  {{- range $images }}
+    {{- $shuffledImages = $shuffledImages | append (dict "image" . "type" $type "description" $description) }}
+  {{- end }}
+{{- end }}
+
+{{- $shuffledImages = partial "tools/shuffle.html" $shuffledImages }}
+
+<div class="gallery">
+  {{- range $index, $item := $shuffledImages }}
+  {{- $imageAlt := printf "%s artwork %d" $item.type (add $index 1) }}
+  <div class="image-container">
+    <button
+      class="image-fullscreen-target"
+      type="button"
+      data-gallery-index="{{ $index }}"
+      data-gallery-src="{{ $item.image.RelPermalink }}"
+      data-gallery-alt="{{ $imageAlt }}"
+      data-gallery-type="{{ $item.type }}"
+      data-gallery-description="{{ $item.description }}"
+      aria-label="Open {{ $imageAlt }}">
+      <img
+        src="{{ $item.image.RelPermalink }}"
+        alt="{{ $imageAlt }}"
+        loading="lazy"
+        decoding="async">
+    </button>
+  </div>
+  {{- end }}
+</div>
+
+<div
+  id="image-fullscreen"
+  class="image-fullscreen"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="image-fullscreen-caption"
+  aria-hidden="true">
+  <button class="image-fullscreen-close" type="button" data-gallery-close aria-label="Close gallery viewer">
+    <i class="fas fa-times" aria-hidden="true"></i>
+  </button>
+
+  <div class="image-fullscreen-shell">
+    <button class="image-fullscreen-nav image-fullscreen-prev" type="button" data-gallery-prev aria-label="Previous image">
+      <i class="fas fa-chevron-left" aria-hidden="true"></i>
+    </button>
+
+    <figure class="image-fullscreen-figure">
+      <img id="image-fullscreen-content" class="image-fullscreen-content" alt="">
+      <figcaption class="image-fullscreen-meta">
+        <span id="image-fullscreen-caption" class="image-fullscreen-caption"></span>
+        <span id="image-fullscreen-counter" class="image-fullscreen-counter"></span>
+      </figcaption>
+    </figure>
+
+    <button class="image-fullscreen-nav image-fullscreen-next" type="button" data-gallery-next aria-label="Next image">
+      <i class="fas fa-chevron-right" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
