@@ -1,13 +1,19 @@
     <nav class="navbar" aria-label="Main navigation">
-    {{- $logo := resources.Get "images/icons/logo.svg" }}
-        <div class="logo"><a href="{{ .Site.BaseURL }}" aria-label="Matt Peake home"><span class="logo-mark" style="--logo-url: url('{{ $logo.RelPermalink }}');" aria-hidden="true"></span></a></div>
+    {{- $logo := resources.Get "images/icons/wordmark.svg" }}
+        <div class="logo"><a href="{{ .Site.BaseURL }}" aria-label="Matt Peake home"><span class="logo-mark logo-wordmark" style="--logo-url: url('{{ $logo.RelPermalink }}');" aria-hidden="true"></span></a></div>
         <div class="navmenu">
-          {{- range .Site.Menus.main }}<a href='{{ .URL }}' class='navmenu-text'>{{ .Name }}</a>{{- end }}
+          {{- range .Site.Menus.main }}
+          <a href="{{ .URL }}" class="navmenu-text" aria-label="{{ .Name }}">
+            {{- if eq .Name "gallery" }}<i class="navmenu-symbol fas fa-image" aria-hidden="true"></i>
+            {{- else if eq .Name "projects" }}<i class="navmenu-symbol fas fa-code" aria-hidden="true"></i>{{- end }}
+            <span class="navmenu-label">{{ .Name }}</span>
+          </a>
+          {{- end }}
+        </div>
           <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark mode" title="Toggle color theme">
             <span class="theme-toggle-icon" aria-hidden="true">
               <i class="theme-toggle-icon-symbol theme-toggle-icon-moon fas fa-moon"></i>
               <i class="theme-toggle-icon-symbol theme-toggle-icon-sun fas fa-sun"></i>
             </span>
           </button>
-        </div>
     </nav>

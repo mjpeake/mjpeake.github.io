@@ -5,7 +5,10 @@
     {{ range .Pages }}
       {{- $href := or .Params.link .Params.github }}
       {{- if $href }}
-      <a href="{{ $href }}" class="project">
+      {{- $destination := "View source on GitHub" }}
+      {{- if .Params.link }}{{ $destination = "View website" }}{{ end }}
+      {{- if and .Params.link (eq .Parent.Title "Games") }}{{ $destination = "Play online" }}{{ end }}
+      <a href="{{ $href }}" class="project" title="{{ $destination }}" aria-label="{{ .Title }} — {{ $destination }}">
         {{ $image := .Resources.GetMatch "icon.svg" }}
         {{ if not $image }}
           {{ $image = resources.Get "images/icons/default-project.svg" }}

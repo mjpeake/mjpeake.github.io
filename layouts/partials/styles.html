@@ -1,9 +1,6 @@
   <link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css">
   <link rel="stylesheet" href="/fontawesome/css/brands.min.css">
   <link rel="stylesheet" href="/fontawesome/css/solid.min.css">
-  <link rel="stylesheet" href="/fonts/kollektif/stylesheet.css">
-  <link rel="stylesheet" href="/fonts/kollektif-bold/stylesheet.css">
-  <link rel="stylesheet" href="/fonts/gidole/stylesheet.css">
 
   {{- range slice "css/header.css" "css/main.css" "css/footer.css" }}
     {{- partial "asset/css.html" . }}
@@ -19,3 +16,7 @@
       {{- partial "asset/css.html" "css/list/gallery.css" }}
     {{- end }}
   {{- end }}
+
+  {{- partial "asset/css.html" "css/ridgeline.css" }}
+
+  {{- partial "asset/css.html" "css/responsive.css" }}

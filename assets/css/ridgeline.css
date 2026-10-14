@@ -1,0 +1,40 @@
+/* Ridgeline identity: approved outlines and locally hosted OFL fonts. */
+@font-face { font-family: Oxanium; src: url('/fonts/ridgeline/oxanium.ttf') format('truetype'); font-weight: 200 800; font-style: normal; font-display: swap; }
+@font-face { font-family: Manrope; src: url('/fonts/ridgeline/manrope.ttf') format('truetype'); font-weight: 200 800; font-style: normal; font-display: swap; }
+:root {
+  --bgcolor: #FAFAFA; --bgcolor-off: #DEDEDE;
+  --accent: #111111; --textcolor: #111111;
+  --surface: #FAFAFA; --surface-hover: #EFEFEF;
+  --border-color: #D0D0D0; --muted-text: #595959;
+  --button-text: #FAFAFA; --focus-ring: #111111;
+  --brand-link: #111111; --brand-secondary: #111111;
+  --main-font: 'Oxanium', sans-serif;
+  --second-font: 'Oxanium', sans-serif;
+  --text-font: 'Manrope', sans-serif;
+}
+[data-theme="dark"] {
+  --bgcolor: #111111; --bgcolor-off: #111111;
+  --accent: #FAFAFA; --textcolor: #FAFAFA;
+  --surface: #1C1C1C; --surface-hover: #292929;
+  --border-color: #FAFAFA; --muted-text: #cbc7bd;
+  --button-text: #111111; --focus-ring: #FAFAFA;
+  --brand-link: #FAFAFA; --brand-secondary: #FAFAFA;
+}
+body { font-size: 16px; line-height: 1.6; }
+h1, h2, h3, h4, h5, h6 { font-family: var(--main-font); font-weight: 600; line-height: 1.2; }
+strong, label { font-weight: 600; }
+.logo .logo-wordmark { background-color: var(--textcolor); }
+.navmenu-text { font-weight: 600; font-size: 1.25rem; border-bottom-width: 2px; }
+.navmenu-text:hover, .navmenu-text:focus-visible { color: var(--brand-link); border-bottom: 2px solid var(--brand-link); }
+.theme-toggle:hover { color: var(--brand-link); border-color: var(--brand-link); }
+.page-title h1, .home-showcase-title-name { font-weight: 600; }
+.home-showcase-title { border-top-color: var(--brand-secondary); }
+.home-showcase-title-kicker { letter-spacing: .12em; }
+.home-showcase-title:hover, .home-showcase-title:focus-visible { background-color: var(--accent); color: var(--button-text); }
+.project { border-radius: 6px; border: 1px solid var(--bgcolor-off); padding-block: 1rem; box-sizing: border-box; }
+.project:hover { border-color: var(--brand-link); }
+.project-description { line-height: 1.6; }
+.filterBtn { border-radius: 4px; border-width: 1px; font-weight: 600; padding: .3rem .65rem; }
+.filterBtn.active { background-color: var(--accent); color: var(--button-text); border-color: var(--accent); }
+.filterBtn:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+.icon:hover, .icon:focus-visible { color: var(--brand-link); }
